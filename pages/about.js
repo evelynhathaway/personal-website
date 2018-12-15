@@ -30,6 +30,11 @@ function About(props) {
 					<a>Go to the main page</a>
 				</Link>
 			</Typography>
+			<Typography gutterBottom>
+				<Link href="/hello">
+					<a>Go to the MDX hello page</a>
+				</Link>
+			</Typography>
 			<Button variant="contained" color="primary">
 				Do nothing button
 			</Button>

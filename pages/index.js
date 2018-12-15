@@ -64,6 +64,11 @@ class Index extends React.Component {
 						<a>Go to the about page</a>
 					</Link>
 				</Typography>
+				<Typography gutterBottom>
+					<Link href="/hello">
+						<a>Go to the MDX hello page</a>
+					</Link>
+				</Typography>
 				<Button variant="contained" color="secondary" onClick={this.handleClick}>
 					Super Secret Password
 				</Button>
