@@ -77,8 +77,14 @@ class Index extends React.Component {
 	}
 }
 
+Index.headProps = {
+	title: "Home",
+};
+
+// TODO: use TS instead
 Index.propTypes = {
 	classes: PropTypes.object.isRequired,
+	headProps: PropTypes.object,
 };
 
 export default withStyles(styles)(Index);

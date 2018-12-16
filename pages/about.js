@@ -42,6 +42,10 @@ function About(props) {
 	);
 }
 
+About.headProps = {
+	title: "About",
+};
+
 About.propTypes = {
 	classes: PropTypes.object.isRequired,
 };
