@@ -9,6 +9,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import Typography from "@material-ui/core/Typography";
 import {withStyles} from "@material-ui/core/styles";
 import Link from "next/link";
+import Tiles from "../components/tiles";
 
 
 const styles = theme => ({
@@ -40,6 +41,7 @@ class Index extends Component {
 
 		return (
 			<div className={classes.root}>
+				<Tiles/>
 				<Dialog open={open} onClose={this.handleClose}>
 					<DialogTitle>Super Secret Password</DialogTitle>
 					<DialogContent>
