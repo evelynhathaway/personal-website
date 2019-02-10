@@ -65,9 +65,22 @@ MyDocument.getInitialProps = ctx => {
 
 		WrappedComponent.propTypes = {
 			pageContext: PropTypes.object.isRequired,
+			headProps: PropTypes.object,
 		};
 
-		return WrappedComponent;
+		// Allow to "pierce" through to `Component` to avoid client-sever discrepancies
+		return new Proxy(
+			WrappedComponent,
+			{
+				get(target, property, receiver) {
+					if (target.hasOwnProperty(property)) {
+						return Reflect.get(target, property, receiver);
+					} else {
+						return Reflect.get(Component, property, receiver);
+					}
+				},
+			}
+		);
 	});
 
 	return {

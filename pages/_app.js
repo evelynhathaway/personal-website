@@ -5,6 +5,8 @@ import {MuiThemeProvider} from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import JssProvider from "react-jss/lib/JssProvider";
 import getPageContext from "../src/getPageContext";
+import Nav from "../components/nav";
+
 
 class MyApp extends App {
 	constructor(props) {
@@ -22,6 +24,11 @@ class MyApp extends App {
 
 	render() {
 		const {Component, pageProps} = this.props;
+		let title;
+		if (Component.headProps) {
+			title = Component.headProps.title;
+		}
+		// console.log(Component)
 		return (
 			<Container>
 				<Head {...Component.headProps}/>
@@ -30,16 +37,16 @@ class MyApp extends App {
 					registry={this.pageContext.sheetsRegistry}
 					generateClassName={this.pageContext.generateClassName}
 				>
-					{/* MuiThemeProvider makes the theme available down the React
-							tree thanks to React context. */}
+					{/* MuiThemeProvider makes the theme available down the React tree thanks to React context. */}
 					<MuiThemeProvider
 						theme={this.pageContext.theme}
 						sheetsManager={this.pageContext.sheetsManager}
 					>
 						{/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
 						<CssBaseline/>
-						{/* Pass pageContext to the _document though the renderPage enhancer
-							to render collected styles on server side. */}
+						{/* Add Navigation component */}
+						<Nav is={title}/>
+						{/* Pass pageContext to the _document though the renderPage enhancer to render collected styles on server side. */}
 						<Component pageContext={this.pageContext} {...pageProps}/>
 					</MuiThemeProvider>
 				</JssProvider>

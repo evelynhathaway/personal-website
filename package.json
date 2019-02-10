@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "personal-website",
   "scripts": {
     "build": "next build",
@@ -6,16 +7,17 @@
     "start": "next start"
   },
   "dependencies": {
-    "@material-ui/core": "3.6.2",
-    "@mdx-js/mdx": "0.16.6",
-    "@zeit/next-mdx": "1.2.0",
-    "jss": "9.8.7",
-    "next": "7.0.2",
-    "prop-types": "15.6.2",
-    "react": "16.6.3",
-    "react-dom": "16.6.3",
-    "react-jss": "8.6.1",
-    "remark-emoji": "2.0.2",
-    "remark-images": "0.16.1"
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "@mdx-js/mdx": "^0.16.8",
+    "@zeit/next-mdx": "^1.2.0",
+    "jss": "^9.8.7",
+    "next": "^7.0.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-jss": "^8.6.1",
+    "remark-emoji": "^2.0.2",
+    "remark-images": "^0.16.8"
   }
 }
