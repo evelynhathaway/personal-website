@@ -1,23 +1,56 @@
 {
-  "private": true,
   "name": "personal-website",
+  "version": "0.0.0",
+  "private": true,
+  "description": "My personal website.",
+  "homepage": "https://github.com/evelynhathaway/personal-website#readme",
+  "bugs": {
+    "url": "https://github.com/evelynhathaway/personal-website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evelynhathaway/personal-website.git"
+  },
+  "license": "MIT",
+  "author": "Evelyn Hathaway <npm@evelyn.dev> (https://evelyn.dev)",
   "scripts": {
-    "build": "next build",
-    "dev": "next",
-    "start": "next start"
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "develop": "gatsby develop",
+    "lint": "eslint --ext .js --ext .jsx ./",
+    "serve": "gatsby serve",
+    "start": "gatsby build && gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
-    "@mdx-js/mdx": "^0.20.3",
-    "@zeit/next-mdx": "^1.2.0",
-    "jss": "^9.8.7",
-    "next": "^8.0.3",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-jss": "^8.6.1",
-    "remark-emoji": "^2.0.2",
-    "remark-images": "^0.18.0"
+    "classnames": "^2.2.6",
+    "gatsby": "^2.19.32",
+    "gatsby-image": "^2.2.43",
+    "gatsby-plugin-manifest": "^2.2.44",
+    "gatsby-plugin-react-helmet": "^3.1.23",
+    "gatsby-plugin-robots-txt": "^1.5.0",
+    "gatsby-plugin-sharp": "^2.4.8",
+    "gatsby-plugin-typography": "^2.3.23",
+    "gatsby-source-filesystem": "^2.1.51",
+    "gatsby-transformer-sharp": "^2.3.17",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-helmet": "^5.2.1",
+    "react-typography": "^0.16.19",
+    "typography": "^0.16.19"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "eslint": "^6.8.0",
+    "eslint-plugin-evelyn": "^2.0.0",
+    "eslint-plugin-mocha": "^6.3.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-unicorn": "^17.0.1",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "mocha": "^7.1.0",
+    "worker-loader": "^2.0.0"
+  },
+  "engines": {
+    "node": "^10.0.0"
   }
 }
