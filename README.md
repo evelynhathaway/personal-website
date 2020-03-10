@@ -1,3 +1,15 @@
+<div align="center">
+
+<img alt="Website icon" width="128" height="128" align="center" src=".github/icon.png"/>
+
 # Personal Website
 
-Hey, this is my website I'm working on. This is my go-to project for when I'm ambitious about putting technologies to work.
+**My portfolio website written in React.js**
+
+[![license: MIT](https://badgen.net/badge/license/MIT/blue)](/LICENSE)
+
+</div>
+
+## License
+
+Copyright Evelyn Hathaway, [MIT License](/LICENSE)
