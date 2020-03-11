@@ -10,6 +10,7 @@ module.exports = {
 	plugins: [
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",
+		"gatsby-plugin-preload-fonts",
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
@@ -24,18 +25,6 @@ module.exports = {
 			},
 		},
 		{
-			resolve: "gatsby-plugin-web-font-loader",
-			options: {
-				custom: {
-					families: ["Gilroy", "Manrope"],
-					urls: [
-						"/fonts/gilroy/index.css",
-						"/fonts/manrope/index.css",
-					],
-				},
-			},
-		},
-		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				name: "Evelyn Hathaway",
@@ -43,7 +32,7 @@ module.exports = {
 				start_url: "/",
 				background_color: "#ff7d3d",
 				theme_color: "#ff7d3d",
-				display: "browser",
+				display: "minimal-ui",
 				icon: "src/assets/images/headshot.png",
 			},
 		},

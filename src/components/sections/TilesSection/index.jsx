@@ -10,8 +10,13 @@ export default function TilesSection () {
 		query {
 			headshot: file(relativePath: {eq: "headshot.png"}) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
+					fluid(
+						maxWidth: 250,
+						traceSVG: {
+							color: "#FD884D"
+						}
+					) {
+						...GatsbyImageSharpFluid_withWebp_tracedSVG
 					}
 				}
 			}
