@@ -1,20 +1,20 @@
-# Dependencies
-/node_modules
+# Node
+node_modules
 
-# Testing
-/coverage
+# IDE
+\.idea/
+\.vscode/
 
-# Production
+# Built files
 /build
-/dist
-/.next
 
-# Misc
+# Gatsby
+.cache/
+public
+reduxcache*
+
+# Other
+/cache
+/*.log
+*.lock
 .DS_Store
-.env
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor
-.vscode/
