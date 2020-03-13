@@ -1,0 +1,160 @@
+/*
+	Local Definitions
+*/
+@mixin small {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+@mixin xsmall {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+
+@mixin css-triangle($color) {
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-left: 100px solid transparent;
+	border-right: 100px solid transparent;
+	border-bottom: 100px solid $color;
+}
+
+$shadow-tint: 0 -6px 0 rgba(255, 255, 255, 0.6);
+$shadow-shade: 0 6px 0 rgba(0, 0, 0, 0.20);
+$border-tint: 6px solid transparent;
+$border-shade: 6px solid rgba(0, 0, 0, 0.1);
+@mixin elevated {
+	box-shadow: $shadow-tint, $shadow-shade;
+	border-top: $border-tint;
+	border-bottom: $border-shade;
+}
+
+
+/*
+	Elements
+*/
+.root {
+	position: relative;
+	overflow: hidden;
+}
+
+.flexArea {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	padding: 60px;
+	max-width: 1800px;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+	@include xsmall {
+		flex-wrap: wrap;
+		padding: 16px;
+	}
+
+	h1 {
+		font-size: 4em;
+		/* Less space above for visual closeness to the `preheader` */
+		margin: 0.5rem 0 1rem 0;
+		@include small {
+			font-size: 2em;
+			margin: 0.25rem 0 0.5rem 0;
+		}
+	}
+	p {
+		margin: 1rem 0;
+		@include small {
+			margin: 0.5rem 0;
+		}
+	}
+	.preheader {
+		@include typography.header;
+		font-size: 2.75em;
+		@include small {
+			font-size: 1.75em;
+		}
+	}
+	.tagline {
+		font-size: 1.25em;
+		font-weight: 700;
+		@include small {
+			font-size: 1em;
+		}
+	}
+}
+
+.speechBubble {
+	@include elevated;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 48px 48px 0 48px;
+	padding: 40px;
+	position: relative;
+	margin-right: 50px;
+	text-wrap: balance; // Proposed CSS, see adobe/balance-text and the CSS Text Module Level 4 Editor's Draft
+	@include small {
+		border-radius: 32px 32px 0 32px;
+		padding: 24px;
+	}
+	@include xsmall {
+		width: 100%;
+		border-radius: 16px;
+		padding: 0 16px;
+		order: 1;
+		margin-right: 0;
+	}
+
+	.cssTriangle {
+		@include css-triangle(#E5E5E5);
+		bottom: -6px;
+		right: -100px;
+		@include xsmall {
+			display: none;
+		}
+
+		&::before {
+			@include css-triangle(#fff);
+			content: "";
+			top: -6px;
+			right: -100px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			top: 0;
+			right: -100px;
+			box-shadow: $shadow-shade;
+		}
+	}
+}
+
+.imageContainer {
+	@include elevated;
+	flex-basis: 30%;
+	min-width: 300px;
+	border-radius: 50%;
+	background-color: #fff;
+	@include xsmall {
+		width: 100%;
+		max-width: 300px;
+		min-width: initial;
+		flex-basis: initial;
+		margin-bottom: 24px;
+	}
+
+	.image {
+		display: block;
+		margin: 18px 24px;
+		border-radius: 50%;
+		@include xsmall {
+			margin: 10px 16px;
+		}
+	}
+}

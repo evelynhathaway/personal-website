@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import classNames from "classnames";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import Worker from "./offscreenCanvas.worker";
 import {render} from "./render";
 

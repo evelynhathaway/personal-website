@@ -12,6 +12,20 @@ module.exports = {
 		"gatsby-plugin-sharp",
 		"gatsby-plugin-preload-fonts",
 		{
+			resolve: "gatsby-plugin-sass",
+			options: {
+				implementation: require("sass"),
+				data: `
+					@use "sass:map";
+					@use "colors.scss";
+					@use "typography.scss";
+				`,
+				includePaths: [
+					"src/styles/defs/",
+				],
+			},
+		},
+		{
 			resolve: "gatsby-source-filesystem",
 			options: {
 				name: "images",
@@ -30,8 +44,8 @@ module.exports = {
 				name: "Evelyn Hathaway",
 				short_name: "Evelyn Hathaway",
 				start_url: "/",
-				background_color: "#ff7d3d",
-				theme_color: "#ff7d3d",
+				background_color: "#FF7D3D",
+				theme_color: "#FF7D3D",
 				display: "minimal-ui",
 				icon: "src/assets/images/headshot.png",
 			},

@@ -1,22 +1,10 @@
 // Palette colors from lightest to darkest
-const oranges = [
-	"#FEC3A6",
-	"#FDA679",
-	"#FD884D",
-	"#FF7D3D",
-	"#FC6A20",
-	"#BD5018",
-	"#7E3510",
-];
-const blues = [
-	"#D9F7FF",
-	"#B2EFFF",
-	"#8CE8FF",
-	"#65E0FF",
-	"#3FD8FF",
-	"#2FA2BF",
-	"#206C80",
-];
+import * as colors from "../../utils/colors";
+
+// Convert type for easy scripting, remove lightest and darkest colors
+const mapToTrimmedArray = (map) => [...map.values()].slice(1, -1);
+const oranges = mapToTrimmedArray(colors.orange);
+const blues = mapToTrimmedArray(colors.blue);
 
 // User agent character codes to be used for color generation
 // - To whomever is reading my code, isn't it a lovely easter egg?

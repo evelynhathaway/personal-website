@@ -1,0 +1,28 @@
+// Match against typography.js
+$base-line-height: 1.7;
+@mixin base-line-height {
+	line-height: $base-line-height;
+}
+
+$header-font-weight: 900;
+@mixin header-font-weight {
+	font-weight: 900;
+}
+$header-font-family: "Gilroy", "Manrope", "Segoe UI", "Arial", sans-serif;
+@mixin header-font-family {
+	font-family: $header-font-family;
+}
+@mixin header {
+	@include header-font-family;
+	@include header-font-weight;
+	@include base-line-height;
+}
+
+$body-font-family: "Manrope", "Segoe UI", "Helvetica", "Arial", sans-serif;
+@mixin body-font-family {
+	font-family: body-font-family;
+}
+@mixin body {
+	@include body-font-weight;
+	@include base-line-height;
+}

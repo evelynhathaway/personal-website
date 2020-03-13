@@ -2,7 +2,7 @@ import React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 import Tiles from "../../Tiles";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 export default function TilesSection () {
 	// Load fluid image using Gatsby, GraphQL, and Sharp
@@ -11,9 +11,9 @@ export default function TilesSection () {
 			headshot: file(relativePath: {eq: "headshot.png"}) {
 				childImageSharp {
 					fluid(
-						maxWidth: 250,
+						maxWidth: 300,
 						traceSVG: {
-							color: "#FD884D"
+							color: "#FF9764"
 						}
 					) {
 						...GatsbyImageSharpFluid_withWebp_tracedSVG
