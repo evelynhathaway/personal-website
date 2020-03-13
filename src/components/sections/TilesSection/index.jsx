@@ -36,7 +36,7 @@ export default function TilesSection () {
 				</div>
 
 				<div className={styles.imageContainer}>
-					<Img className={styles.image} alt="Evelyn's Headshot" fluid={data.headshot.childImageSharp.fluid}/>
+					<Img className={styles.image} alt="Evelyn's Headshot" fluid={data.headshot.childImageSharp.fluid} loading="eager"/>
 				</div>
 			</div>
 
