@@ -5,8 +5,8 @@ const typography = new Typography(
 		// Match against typography.scss
 		baseLineHeight: 1.7,
 		headerWeight: 900,
-		headerFontFamily: ["Gilroy", "Manrope", "Segoe UI", "Arial", "sans-serif"],
-		bodyFontFamily: ["Manrope", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
+		headerFontFamily: ["Gilroy", "Manrope", "Arial", "sans-serif"],
+		bodyFontFamily: ["Manrope", "Helvetica", "Arial", "sans-serif"],
 	},
 );
 

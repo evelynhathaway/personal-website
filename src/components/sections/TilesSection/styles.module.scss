@@ -16,7 +16,6 @@
 	width: 0;
 	height: 0;
 	position: absolute;
-	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
 	border-bottom: 100px solid $color;
 }
@@ -41,6 +40,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 }
 
 .flexArea {
+	color: map.get(colors.$blue, 900);
 	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
