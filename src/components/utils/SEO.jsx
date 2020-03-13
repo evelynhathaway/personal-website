@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import {graphql, useStaticQuery} from "gatsby";
+import shareImage from "../../assets/images/share-image.png";
 
 
 export default function SEO ({
@@ -35,6 +36,27 @@ export default function SEO ({
 				{
 					property: "og:url",
 					content: siteData.siteUrl,
+				},
+				{
+					property: "og:type",
+					content: "website",
+				},
+				{
+					property: "profile:first_name",
+					content: "Evelyn",
+				},
+				{
+					property: "profile:last_name",
+					content: "Hathaway",
+				},
+				{
+					property: "profile:username",
+					content: "evelynhathaway",
+				},
+				{
+					property: "profile:gender",
+					"data-comment": "Open Graph: \"enum(male, female)\"; Evelyn, a rebel who fights for what's right by invalidating her own Open Graph data...",
+					content: "non-binary",
 				},
 				{
 					property: "og:site_name",
@@ -72,15 +94,22 @@ export default function SEO ({
 					name: "twitter:card",
 					content: "summary_large_image",
 				},
-				// TODO
-				// {
-				// 	property: "og:image",
-				// 	content: "https://unicorn-utterances.com/share-banner.png",
-				// },
-				// {
-				// 	name: "twitter:image",
-				// 	content: "https://unicorn-utterances.com/share-banner.png",
-				// },
+				{
+					property: "og:image",
+					content: `${siteData.siteUrl}${shareImage}`,
+				},
+				{
+					name: "twitter:image",
+					content: `${siteData.siteUrl}${shareImage}`,
+				},
+				{
+					property: "og:image:alt",
+					content: "Hey there! 👋 I am Evelyn Hathaway.",
+				},
+				{
+					name: "twitter:image:alt",
+					content: "Hey there! 👋 I am Evelyn Hathaway.",
+				},
 			]}
 		/>
 	);

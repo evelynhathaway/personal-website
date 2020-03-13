@@ -1,11 +1,13 @@
 const path = require("path");
 
+const buildMode = process.env.BUILD_ENV || "production";
+const siteUrl = buildMode === "production" ? "https://evelyn.dev" : "https://beta.evelyn.dev";
 
 module.exports = {
 	siteMetadata: {
 		title: "Evelyn Hathaway",
 		description: "I'm a software developer with a strong passion for frontend and backend JavaScript and web accessibility.",
-		siteUrl: "https://evelyn.dev/",
+		siteUrl,
 	},
 	plugins: [
 		"gatsby-transformer-sharp",
@@ -44,7 +46,7 @@ module.exports = {
 				name: "Evelyn Hathaway",
 				short_name: "Evelyn Hathaway",
 				start_url: "/",
-				background_color: "#FF7D3D",
+				background_color: "#ED4424",
 				theme_color: "#FF7D3D",
 				display: "minimal-ui",
 				icon: "src/assets/images/headshot.png",
@@ -54,11 +56,11 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-robots-txt",
 			options: {
-				resolveEnv: () => process.env.GITHUB_REF,
+				host: `${siteUrl}/sitemap.xml`,
+				sitemap: `${siteUrl}/sitemap.xml`,
+				resolveEnv: () => buildMode,
 				env: {
-					"refs/heads/dev": {
-						host: "https://dev.evelyn.dev/sitemap.xml",
-						sitemap: "https://dev.evelyn.dev/sitemap.xml",
+					"development": {
 						policy: [
 							{
 								userAgent: "*",
@@ -66,9 +68,7 @@ module.exports = {
 							},
 						],
 					},
-					"refs/heads/master": {
-						host: "https://evelyn.dev/sitemap.xml",
-						sitemap: "https://evelyn.dev/sitemap.xml",
+					"production": {
 						policy: [
 							{
 								userAgent: "*",

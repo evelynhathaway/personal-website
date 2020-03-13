@@ -15,6 +15,7 @@
   "author": "Evelyn Hathaway <npm@evelyn.dev> (https://evelyn.dev)",
   "scripts": {
     "build": "gatsby build",
+    "build-beta": "cross-env BUILD_ENV=beta npm run build",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
     "lint": "eslint --ext .js --ext .jsx ./",
@@ -25,6 +26,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
     "gatsby": "^2.19.41",
     "gatsby-image": "^2.2.43",
     "gatsby-plugin-manifest": "^2.2.47",
