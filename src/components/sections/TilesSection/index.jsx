@@ -16,7 +16,7 @@ export default function TilesSection () {
 					fluid(
 						webpQuality: 90,
 						srcSetBreakpoints: [200, 275, 300, 400, 500, 600, 700, 800, 1000],
-						sizes: "(max-width: 250px) 200px, (max-width: 1400px) 275px, (max-width: 1465px) 300px, (max-width: 1670px) 400px, 500px",
+						sizes: "(max-width: 250px) 200px, (max-width: 1400px) 275px, (max-width: 1500px) 300px, 400px",
 						traceSVG: {
 							color: "#FF9764"
 						}
