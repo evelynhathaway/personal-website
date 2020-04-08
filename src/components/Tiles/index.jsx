@@ -80,7 +80,7 @@ export default function Tiles () {
 	useEffect(() => setUpCanvas(canvasRef, containerRef, setRendered), []);
 
 	return (
-		<div className={styles.root} ref={containerRef}>
+		<div className={styles.Tiles} ref={containerRef}>
 			<canvas className={
 				classNames(
 					styles.canvas,

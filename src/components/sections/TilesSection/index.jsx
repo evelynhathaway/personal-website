@@ -29,7 +29,7 @@ export default function TilesSection () {
 	`);
 
 	return (
-		<div className={styles.root}>
+		<div className={styles.TilesSection}>
 			<div className={styles.flexArea}>
 				<div className={styles.speechBubble}>
 					<p className={styles.preheader}>Hey there! 👋</p>
@@ -49,6 +49,18 @@ export default function TilesSection () {
 					<Chip
 						slotThumbnail={<Icon icon="email" className={styles.chipIcon}/>}
 						text="hey@evelyn.dev"
+					/>
+				</UnstyledAnchor>
+				<UnstyledAnchor href="https://github.com/evelynhathaway" rel="noopener" target="_blank">
+					<Chip
+						slotThumbnail={<Icon icon="code" className={styles.chipIcon}/>}
+						text="GitHub"
+					/>
+				</UnstyledAnchor>
+				<UnstyledAnchor href="https://www.linkedin.com/in/evelynhathaway/" rel="noopener" target="_blank">
+					<Chip
+						slotThumbnail={<Icon icon="work" className={styles.chipIcon}/>}
+						text="LinkedIn"
 					/>
 				</UnstyledAnchor>
 				<UnstyledAnchor href="https://goo.gl/maps/9x98A5BuH4vLB3G1A" rel="noopener" target="_blank">

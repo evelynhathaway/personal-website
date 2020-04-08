@@ -44,7 +44,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 /*
 	Elements
 */
-.root {
+.TilesSection {
 	position: relative;
 	overflow: hidden;
 }
@@ -54,17 +54,17 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
-	padding: 80px 80px 0 80px;
+	padding: 80px 80px 0;
 	max-width: 1800px;
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
 	@include medium {
-		padding: 40px;
+		padding: 40px 40px 0;
 	}
 	@include xsmall {
 		flex-wrap: wrap;
-		padding: 16px;
+		padding: 16px 16px 0;
 	}
 
 	h1 {
@@ -179,22 +179,27 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 
 .chips {
 	line-height: 1;
-	height: calc(48px + 2rem);
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
+	color: map.get(colors.$blue, 900);
+	margin: calc(32px - 1rem) 80px;
+	@include medium {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+	@include xsmall {
+		margin-left: 16px;
+		margin-right: 16px;
+	}
 
 	> * {
-		margin: 0 6px;
-		&:first-child {
-			margin-left: 0;
-		}
-		&:last-child {
-			margin-right: 0;
-		}
+		margin: 6px;
 	}
 
 	.chipIcon {
-		color: rgba(255, 255, 255, 0.8);
+		opacity: 0.9;
+		color: map.get(colors.$blue, 900);
 	}
 }
