@@ -1,6 +1,16 @@
 /*
 	Local Definitions
 */
+@mixin large {
+	@media (max-width: 1600px) {
+		@content;
+	}
+}
+@mixin medium {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
 @mixin small {
 	@media (max-width: 900px) {
 		@content;
@@ -16,8 +26,8 @@
 	width: 0;
 	height: 0;
 	position: absolute;
-	border-right: 100px solid transparent;
-	border-bottom: 100px solid $color;
+	border-right: 80px solid transparent;
+	border-bottom: 80px solid $color;
 }
 
 $shadow-tint: 0 -6px 0 rgba(255, 255, 255, 0.6);
@@ -44,11 +54,14 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
-	padding: 60px;
+	padding: 80px;
 	max-width: 1800px;
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
+	@include medium {
+		padding: 40px;
+	}
 	@include xsmall {
 		flex-wrap: wrap;
 		padding: 16px;
@@ -91,11 +104,13 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
+	flex-grow: 1;
+	align-self: stretch;
 	background-color: #fff;
 	border-radius: 48px 48px 0 48px;
 	padding: 40px;
 	position: relative;
-	margin-right: 50px;
+	margin-right: 40px;
 	text-wrap: balance; // Proposed CSS, see adobe/balance-text and the CSS Text Module Level 4 Editor's Draft
 	@include small {
 		border-radius: 32px 32px 0 32px;
@@ -112,7 +127,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	.cssTriangle {
 		@include css-triangle(#E5E5E5);
 		bottom: -6px;
-		right: -100px;
+		right: -80px;
 		@include xsmall {
 			display: none;
 		}
@@ -121,15 +136,15 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 			@include css-triangle(#fff);
 			content: "";
 			top: -6px;
-			right: -100px;
+			right: -80px;
 		}
 		&::after {
 			content: "";
 			position: absolute;
-			width: 100px;
-			height: 100px;
+			width: 80px;
+			height: 80px;
 			top: 0;
-			right: -100px;
+			right: -80px;
 			box-shadow: $shadow-shade;
 		}
 	}
@@ -137,10 +152,13 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 
 .imageContainer {
 	@include elevated;
-	flex-basis: 30%;
-	min-width: 300px;
+	flex-basis: 400px;
+	min-width: 400px;
 	border-radius: 50%;
 	background-color: #fff;
+	@include large {
+		min-width: 300px;
+	}
 	@include xsmall {
 		width: 100%;
 		max-width: 300px;

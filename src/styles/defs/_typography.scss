@@ -8,7 +8,7 @@ $header-font-weight: 900;
 @mixin header-font-weight {
 	font-weight: 900;
 }
-$header-font-family: "Gilroy", "Manrope", "Arial", sans-serif;
+$header-font-family: "Gilroy", "Manrope", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @mixin header-font-family {
 	font-family: $header-font-family;
 }
@@ -18,7 +18,7 @@ $header-font-family: "Gilroy", "Manrope", "Arial", sans-serif;
 	@include base-line-height;
 }
 
-$body-font-family: "Manrope", "Helvetica", "Arial", sans-serif;
+$body-font-family: "Manrope", "Helvetica", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @mixin body-font-family {
 	font-family: body-font-family;
 }
