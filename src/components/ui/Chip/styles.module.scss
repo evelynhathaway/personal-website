@@ -1,0 +1,34 @@
+.root {
+	height: 2rem;
+	white-space: nowrap;
+	border-radius: 1rem;
+	overflow: hidden;
+	background-color: #FFF;
+	display: inline-flex;
+	align-items: center;
+	line-height: 1;
+	font-weight: 600;
+	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.20);
+	transition: box-shadow ease 0.2s, color ease 0.2s;
+	&:hover {
+		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.40);
+	}
+	&:active {
+		background-color: #EEE;
+		box-shadow: 0 4px 2px rgba(0, 0, 0, 0.20);
+	}
+}
+
+
+.thumbnail {
+	margin: 0 0.5rem;
+	// TODO: below is for colored circle placeholder (e.g. for color coded tags)
+	// height: 1.5rem;
+	// width: 1.5rem;
+	// border-radius: 50%;
+	// background-color: #eee;
+}
+
+.text {
+	margin-right: 0.75rem;
+}

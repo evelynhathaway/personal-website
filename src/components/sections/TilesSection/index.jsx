@@ -2,6 +2,9 @@ import React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
 import Tiles from "../../Tiles";
+import Icon from "../../ui/Icon";
+import Chip from "../../ui/Chip";
+import UnstyledAnchor from "../../utils/UnstyledAnchor";
 import styles from "./styles.module.scss";
 
 export default function TilesSection () {
@@ -38,6 +41,22 @@ export default function TilesSection () {
 				<div className={styles.imageContainer}>
 					<Img className={styles.image} alt="Evelyn's Headshot" fluid={data.headshot.childImageSharp.fluid} loading="eager"/>
 				</div>
+			</div>
+
+			{/* Info chips */}
+			<div className={styles.chips}>
+				<UnstyledAnchor href="mailto:hey@evelyn.dev" rel="noopener" target="_blank">
+					<Chip
+						slotThumbnail={<Icon icon="email" className={styles.chipIcon}/>}
+						text="hey@evelyn.dev"
+					/>
+				</UnstyledAnchor>
+				<UnstyledAnchor href="https://goo.gl/maps/9x98A5BuH4vLB3G1A" rel="noopener" target="_blank">
+					<Chip
+						slotThumbnail={<Icon icon="place" label="Location" className={styles.chipIcon}/>}
+						text="Seattle, WA"
+					/>
+				</UnstyledAnchor>
 			</div>
 
 			{/* Tiles Background */}
