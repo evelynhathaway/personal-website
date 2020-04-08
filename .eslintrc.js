@@ -5,6 +5,7 @@ module.exports = {
 
 	"extends": [
 		"plugin:evelyn/default",
+		"plugin:evelyn/babel",
 	],
 
 	"overrides": [
