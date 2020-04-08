@@ -2,56 +2,56 @@
 /* Manrope */
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-ExtraBold.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-ExtraBold.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-ExtraBold.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-ExtraBold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 800;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-Bold.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-Bold.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-Bold.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-Bold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-SemiBold.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-SemiBold.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-SemiBold.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-SemiBold.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-Medium.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-Medium.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-Medium.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-Medium.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-Regular.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-Regular.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-Regular.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-Regular.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-Light.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-Light.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-Light.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-Light.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 300;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Manrope";
-	src: url("../assets/fonts/Manrope/Manrope-ExtraLight.woff2") format("woff2"),
-		url("../assets/fonts/Manrope/Manrope-ExtraLight.ttf") format("truetype");
+	src: url("../assets/fonts/manrope/Manrope-ExtraLight.woff2") format("woff2"),
+		url("../assets/fonts/manrope/Manrope-ExtraLight.ttf") format("truetype");
 	font-style: normal;
 	font-weight: 200;
 	font-display: swap;
@@ -60,19 +60,31 @@
 /* Gilroy */
 @font-face {
 	font-family: "Gilroy";
-	src: url("../assets/fonts/Gilroy/Gilroy-ExtraBold.woff2") format("woff2"),
-		url("../assets/fonts/Gilroy/Gilroy-ExtraBold.woff") format("woff");
+	src: url("../assets/fonts/gilroy/Gilroy-ExtraBold.woff2") format("woff2"),
+		url("../assets/fonts/gilroy/Gilroy-ExtraBold.woff") format("woff");
 	font-weight: 800;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
 	font-family: "Gilroy";
-	src: url("../assets/fonts/Gilroy/Gilroy-Light.woff2") format("woff2"),
-		url("../assets/fonts/Gilroy/Gilroy-Light.woff") format("woff");
+	src: url("../assets/fonts/gilroy/Gilroy-Light.woff2") format("woff2"),
+		url("../assets/fonts/gilroy/Gilroy-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
 	font-display: swap;
+}
+
+/* Material Icons */
+@font-face {
+	font-family: "Material Icons";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Material Icons"),
+		local("MaterialIcons-Regular"),
+		url("../assets/fonts/materialicons/MaterialIcons-Regular.woff2") format("woff2"),
+		url("../assets/fonts/materialicons/MaterialIcons-Regular.woff") format("woff"),
+		url("../assets/fonts/materialicons/MaterialIcons-Regular.ttf") format("truetype");
 }
 
 h1, h2, h3, h4, h5, h6 {
