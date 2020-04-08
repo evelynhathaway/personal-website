@@ -11,10 +11,10 @@ export default function Icon({material, svg, label, className}) {
 				material && styles.material,
 				className,
 			)}
-			aria-label={material && label}
-			role={material && "img"}
+			aria-label={label}
+			role={"img"}
 		>
-			{material || <svg viewBox="0 0 24 24"><title>{label}</title><path fill="currentColor" d={svg}/></svg>}
+			{material || <svg viewBox="0 0 24 24"><path fill="currentColor" d={svg}/></svg>}
 		</span>
 	);
 }
