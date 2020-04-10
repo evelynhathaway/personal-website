@@ -59,6 +59,18 @@ export const mint = new Map ([
 	[900, "#152821"],
 ]);
 
+export const neutral = new Map([
+	[100, "#F5F5F5"],
+	[200, "#EEEEEE"],
+	[300, "#E0E0E0"],
+	[400, "#BDBDBD"],
+	[500, "#9E9E9E"],
+	[600, "#757575"],
+	[700, "#616161"],
+	[800, "#424242"],
+	[900, "#212121"],
+]);
+
 export const profile = new Map ([
 	["amber", "#E68C26"],
 	["orange", "#ED4424"],

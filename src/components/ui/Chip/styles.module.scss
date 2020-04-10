@@ -1,21 +1,70 @@
+/*
+	Local Definitions
+*/
+@mixin shadow($colorMap) {
+	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 800), 0.2);
+	&:hover {
+		box-shadow: 0 4px 8px 2px rgba(map.get($colorMap, 800), 0.4);
+	}
+	&:active {
+		box-shadow: 0 2px 2px rgba(map.get($colorMap, 800), 0.2);
+	}
+}
+
+@mixin shadow-light($colorMap) {
+	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 500), 0.4);
+	&:hover {
+		box-shadow: 0 4px 8px 3px rgba(map.get($colorMap, 500), 0.6);
+	}
+	&:active {
+		box-shadow: 0 2px 4px rgba(map.get($colorMap, 500), 0.4);
+	}
+}
+
 .Chip {
 	height: 2rem;
 	white-space: nowrap;
 	border-radius: 1rem;
 	overflow: hidden;
 	background-color: #FFF;
+	// background-color: map.get(colors.$orange, 300);
+	// color: map.get(colors.$orange, 900);
 	display: inline-flex;
 	align-items: center;
 	line-height: 1;
 	font-weight: 600;
-	box-shadow: 0 6px 6px rgba(0, 0, 0, 0.20);
 	transition: box-shadow ease 0.2s, color ease 0.2s;
-	&:hover {
-		box-shadow: 0 6px 8px rgba(0, 0, 0, 0.40);
+	@include shadow(colors.$neutral);
+	&.warm {
+		@include shadow(colors.$orange);
+	}
+	&.hot {
+		@include shadow(colors.$pink);
+	}
+	&.cool {
+		@include shadow(colors.$blue);
+	}
+	&.fresh {
+		@include shadow(colors.$mint);
+	}
+	&.neutralLight {
+		@include shadow-light(colors.$neutral);
+	}
+	&.warmLight {
+		@include shadow-light(colors.$orange);
+	}
+	&.hotLight {
+		@include shadow-light(colors.$pink);
+	}
+	&.coolLight {
+		@include shadow-light(colors.$blue);
+	}
+	&.freshLight {
+		@include shadow-light(colors.$mint);
 	}
 	&:active {
 		background-color: #EEE;
-		box-shadow: 0 4px 2px rgba(0, 0, 0, 0.20);
+		// background-color: map.get(colors.$pink, 200);
 	}
 }
 
