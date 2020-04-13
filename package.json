@@ -25,6 +25,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
   "dependencies": {
+    "a11y-react-emoji": "^1.1.2",
     "classnames": "^2.2.6",
     "cross-env": "^7.0.2",
     "gatsby": "^2.20.13",

@@ -1,6 +1,7 @@
 import React from "react";
 import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
+import Emoji from "a11y-react-emoji";
 import Tiles from "../../Tiles";
 import Icon from "../../ui/Icon";
 import Chip from "../../ui/Chip";
@@ -32,7 +33,7 @@ export default function TilesSection() {
 		<div className={styles.TilesSection}>
 			<div className={styles.flexArea}>
 				<div className={styles.speechBubble}>
-					<p className={styles.preheader}>Hey there! 👋</p>
+					<p className={styles.preheader}>Hey there! <Emoji symbol="👋" label="Waving hand"/></p>
 					<h1>I am Evelyn Hathaway.</h1>
 					<p className={styles.tagline}>I&apos;m a software developer with a strong passion for frontend and backend JavaScript and web accessibility.</p>
 					<span className={styles.cssTriangle}></span>
