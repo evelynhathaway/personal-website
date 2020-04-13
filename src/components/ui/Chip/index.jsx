@@ -4,6 +4,8 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import materialStyles from "../../../styles/material.module.scss";
 
+export {default as ChipAnchor} from "./ChipAnchor";
+
 export default function Chip({thumbnail, thumbnailSize, text, color, shade, className}) {
 	return (
 		<div className={
