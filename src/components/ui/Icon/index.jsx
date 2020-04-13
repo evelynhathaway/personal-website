@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 
@@ -18,3 +19,10 @@ export default function Icon({material, svg, label, className}) {
 		</span>
 	);
 }
+
+Icon.propTypes = {
+	material: PropTypes.string,
+	svg: PropTypes.string,
+	label: PropTypes.string,
+	className: PropTypes.string,
+};

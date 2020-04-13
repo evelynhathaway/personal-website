@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import materialStyles from "../../../styles/material.module.scss";
@@ -30,3 +31,12 @@ export default function Chip({thumbnail, thumbnailSize, text, color, shade, clas
 		</div>
 	);
 }
+
+Chip.propTypes = {
+	thumbnail: PropTypes.node,
+	thumbnailSize: PropTypes.oneOf(["full"]),
+	text: PropTypes.node.isRequired,
+	color: PropTypes.string,
+	shade: PropTypes.string,
+	className: PropTypes.string,
+};
