@@ -1,0 +1,130 @@
+// Shadow used for white/light gray backgrounds
+// - Tinted for colored material
+@mixin shadow($colorMap) {
+	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 500), 0.4);
+	&:hover {
+		box-shadow: 0 4px 8px 3px rgba(map.get($colorMap, 500), 0.6);
+	}
+	&:active {
+		box-shadow: 0 2px 4px rgba(map.get($colorMap, 500), 0.4);
+	}
+}
+// Shadow used for non-white/light gray backgrounds
+// - Tinted for colored backgrounds
+@mixin shadow-dark($colorMap) {
+	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 800), 0.2);
+	&:hover {
+		box-shadow: 0 4px 8px 3px rgba(map.get($colorMap, 800), 0.4);
+	}
+	&:active {
+		box-shadow: 0 2px 4px rgba(map.get($colorMap, 800), 0.2);
+	}
+}
+
+// Color mixins for chaning material color
+@mixin color($colorMap) {
+	color: map.get($colorMap, 900);
+	background-color: map.get($colorMap, 300);
+	@include shadow($colorMap);
+	&:active {
+		background-color: map.get($colorMap, 200);
+	}
+}
+@mixin color-dark($colorMap) {
+	color: map.get($colorMap, 100);
+	background-color: map.get($colorMap, 800);
+	@include shadow($colorMap);
+	&:active {
+		background-color: map.get($colorMap, 700);
+	}
+}
+@mixin color-extra-dark($colorMap) {
+	color: map.get($colorMap, 200);
+	background-color: map.get($colorMap, 900);
+	@include shadow-dark($colorMap);
+	&:active {
+		background-color: map.get($colorMap, 800);
+	}
+}
+
+// Standard material class
+.material {
+	transition: box-shadow ease 0.2s, color ease 0.2s, background ease 0.2s;
+}
+
+// Colors
+.white {
+	background-color: map.get(colors.$gray, 0);
+	@include shadow(colors.$gray);
+	&:active {
+		background-color: map.get(colors.$gray, 200);
+	}
+}
+.gray {
+	@include color(colors.$gray);
+}
+.grayDark {
+	@include color-dark(colors.$gray);
+}
+.grayExtraDark {
+	@include color-extra-dark(colors.$gray);
+}
+.orange {
+	@include color(colors.$orange);
+}
+.blue {
+	@include color(colors.$blue);
+}
+.pink {
+	@include color(colors.$pink);
+}
+.lilac {
+	@include color(colors.$lilac);
+}
+.mint {
+	@include color(colors.$mint);
+}
+.orangeDark {
+	@include color-dark(colors.$orange);
+}
+.blueDark {
+	@include color-dark(colors.$blue);
+}
+.pinkDark {
+	@include color-dark(colors.$pink);
+}
+.lilacDark {
+	@include color-dark(colors.$lilac);
+}
+.mintDark {
+	@include color-dark(colors.$mint);
+}
+.orangeExtraDark {
+	@include color-extra-dark(colors.$orange);
+}
+.blueExtraDark {
+	@include color-extra-dark(colors.$blue);
+}
+.pinkExtraDark {
+	@include color-extra-dark(colors.$pink);
+}
+.lilacExtraDark {
+	@include color-extra-dark(colors.$lilac);
+}
+.mintExtraDark {
+	@include color-extra-dark(colors.$mint);
+}
+
+// Tinted shadow used for colored backgrounds
+.warmShade {
+	@include shadow-dark(colors.$orange);
+}
+.coolShade {
+	@include shadow-dark(colors.$blue);
+}
+.hotShade {
+	@include shadow-dark(colors.$pink);
+}
+.freshShade {
+	@include shadow-dark(colors.$mint);
+}

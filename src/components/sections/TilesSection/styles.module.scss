@@ -47,10 +47,10 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 .TilesSection {
 	position: relative;
 	overflow: hidden;
+	color: map.get(colors.$blue, 900);
 }
 
 .flexArea {
-	color: map.get(colors.$blue, 900);
 	display: flex;
 	flex-direction: row;
 	margin: 0 auto;
@@ -183,7 +183,6 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	color: map.get(colors.$blue, 900);
 	margin: calc(32px - 1rem) 80px;
 	@include medium {
 		margin-left: 40px;
@@ -199,7 +198,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	}
 
 	.chipIcon {
+		// Icons have a heavy font weight and look visually important with darker colors, but they are less important, so let's blend it into the background by 10%
 		opacity: 0.9;
-		color: map.get(colors.$blue, 900);
 	}
 }
