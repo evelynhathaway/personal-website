@@ -33,10 +33,10 @@ const setUpCanvas = function ({current: canvasElement}, {current: containerEleme
 			render({width, height, scale, canvasElement, canvasContext});
 	};
 	const initialRender = function () {
-		// Rerender the component with classname to make visable
-		setRendered(true);
 		// Start the rendering process
 		renderHandoff();
+		// Rerender the component with classname to make visable
+		setRendered(true);
 	};
 
 	// Trigger on page load
@@ -45,10 +45,11 @@ const setUpCanvas = function ({current: canvasElement}, {current: containerEleme
 	// initialRender();
 
 	// Trigger on window resized, zoomed, device rotated, moved to another screens, etc.
-	// - May cause reflow/raster jank on slow systems
+	// - `requestAnimationFrame` delays the call by ~0.5ms on x6 slow down on a clean environment but may improve the performance when multiple resize events occur at once. This occurance is rare since `render()` is quicker than a layout reflow, which occurs after requesting the frame, but I still want to protect against this edge case.
 	// - I can't pinpoint any negative effects because the system must already be impacted to be noticable (e.g. large canvas, x6 CPU slowdown, no offscreencanvas, and a lot of other tabs in the same process), and even then V8 optimises the calls very quickly
+	// - Basically, the reflow from all of the responsive styles of other elements have a larger impact than this component
 	// If you have more information on the performance of this component, I'd love to chat :D
-	window.addEventListener("resize", renderHandoff);
+	window.addEventListener("resize", () => requestAnimationFrame(renderHandoff));
 
 	// Trigger on DOM content loaded (interactive DOM, not all resources)
 	// - Allows scrollbar to be included in the calculations in most cases
