@@ -81,13 +81,11 @@ export default function Tiles () {
 	useEffect(() => setUpCanvas(canvasRef, containerRef, setRendered), []);
 
 	return (
-		<div className={styles.Tiles} ref={containerRef}>
-			<canvas className={
-				classNames(
-					styles.canvas,
-					rendered && styles.rendered
-				)
-			} ref={canvasRef} role="presentation"></canvas>
+		<div className={classNames(
+			styles.Tiles,
+			rendered && styles.rendered,
+		)} ref={containerRef}>
+			<canvas className={styles.canvas} ref={canvasRef} role="presentation"></canvas>
 		</div>
 	);
 }

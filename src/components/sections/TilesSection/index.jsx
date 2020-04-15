@@ -6,6 +6,8 @@ import Tiles from "../../Tiles";
 import Icon from "../../ui/Icon";
 import {ChipAnchor} from "../../ui/Chip";
 import styles from "./styles.module.scss";
+import Navigation from "../../ui/Navigation";
+
 
 export default function TilesSection() {
 	// Load fluid image using Gatsby, GraphQL, and Sharp
@@ -15,8 +17,8 @@ export default function TilesSection() {
 				childImageSharp {
 					fluid(
 						webpQuality: 90,
-						srcSetBreakpoints: [200, 275, 300, 400, 500, 600, 700, 800, 1000],
-						sizes: "(max-width: 250px) 200px, (max-width: 1400px) 275px, (max-width: 1500px) 300px, 400px",
+						srcSetBreakpoints: [175, 225, 275, 300, 350, 400, 450, 500, 550, 750, 1000],
+						sizes: "(max-width: 600px) 175px, (max-width: 800px) 225px, (max-width: 1400px) 275px, (max-width: 1500px) 300px, 375px",
 						traceSVG: {
 							color: "#FF9764"
 						}
@@ -33,7 +35,7 @@ export default function TilesSection() {
 			<div className={styles.flexArea}>
 				<div className={styles.speechBubble}>
 					<p className={styles.preheader}>Hey there! <Emoji symbol="👋" label="Waving hand"/></p>
-					<h1>I am Evelyn Hathaway.</h1>
+					<h1>I&apos;m Evelyn Hathaway.</h1>
 					<p className={styles.tagline}>I&apos;m a software developer with a strong passion for frontend and backend JavaScript and web accessibility.</p>
 					<span className={styles.cssTriangle}></span>
 				</div>
@@ -82,6 +84,9 @@ export default function TilesSection() {
 					thumbnail={<Icon material="place" label="Location" className={styles.chipIcon} />}
 				/>
 			</div>
+
+			{/* Navigation */}
+			<Navigation center />
 
 			{/* Tiles Background */}
 			<Tiles />

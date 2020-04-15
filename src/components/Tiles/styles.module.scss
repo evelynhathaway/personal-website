@@ -7,19 +7,24 @@
 	width: 100%;
 	height: 100%;
 	background-color: map.get(colors.$orange, 400);
-}
 
-.canvas {
-	image-rendering: -moz-crisp-edges;
-	image-rendering: -webkit-crisp-edges;
-	image-rendering: pixelated;
-	image-rendering: -webkit-optimize-contrast;
-	image-rendering: crisp-edges;
-	width: 100%;
-	display: block;
-	transition: opacity 0.5s ease;
-	opacity: 0;
-}
-.canvas.rendered {
-	opacity: 1;
+	.canvas {
+		image-rendering: -moz-crisp-edges;
+		image-rendering: -webkit-crisp-edges;
+		image-rendering: pixelated;
+		image-rendering: -webkit-optimize-contrast;
+		image-rendering: crisp-edges;
+		width: 100%;
+		display: block;
+		transition: opacity 0.5s ease;
+		opacity: 0;
+	}
+
+	&.rendered {
+		background-color: map.get(colors.$gray, 0);
+
+		.canvas {
+			opacity: 1;
+		}
+	}
 }

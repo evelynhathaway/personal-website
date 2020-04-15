@@ -21,6 +21,11 @@
 		@content;
 	}
 }
+@mixin xxsmall {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
 
 @mixin css-triangle($color) {
 	width: 0;
@@ -55,7 +60,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	flex-direction: row;
 	margin: 0 auto;
 	padding: 80px 80px 0;
-	max-width: 1800px;
+	max-width: 1600px;
 	justify-content: space-around;
 	align-items: center;
 	text-align: center;
@@ -64,7 +69,7 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	}
 	@include xsmall {
 		flex-wrap: wrap;
-		padding: 16px 16px 0;
+		padding: 24px 12px 0 12px;
 	}
 
 	h1 {
@@ -161,10 +166,13 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	}
 	@include xsmall {
 		width: 100%;
-		max-width: 300px;
+		max-width: 250px;
 		min-width: initial;
 		flex-basis: initial;
 		margin-bottom: 24px;
+	}
+	@include xxsmall {
+		max-width: 200px;
 	}
 
 	.image {
@@ -183,14 +191,15 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin: calc(32px - 1rem) 80px;
+	padding: 18px 74px;
+	min-height: 80px;
 	@include medium {
-		margin-left: 40px;
-		margin-right: 40px;
+		padding-left: 34px;
+		padding-right: 34px;
 	}
 	@include xsmall {
-		margin-left: 16px;
-		margin-right: 16px;
+		padding-left: 6px;
+		padding-right: 6px;
 	}
 
 	> * {
