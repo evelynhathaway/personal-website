@@ -1,31 +1,33 @@
+@mixin shadow-helper($color, $baseAlpha) {
+	&.raised {
+		box-shadow: 0 4px 6px 2px rgba($color, $baseAlpha);
+		&:hover {
+			box-shadow: 0 4px 8px 3px rgba($color, $baseAlpha + 0.2);
+		}
+		&:active {
+			box-shadow: 0 2px 4px rgba($color, $baseAlpha);
+		}
+	}
+}
 // Shadow used for white/light gray backgrounds
 // - Tinted for colored material
-@mixin shadow($colorMap) {
-	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 500), 0.4);
-	&:hover {
-		box-shadow: 0 4px 8px 3px rgba(map.get($colorMap, 500), 0.6);
-	}
-	&:active {
-		box-shadow: 0 2px 4px rgba(map.get($colorMap, 500), 0.4);
-	}
+@mixin shadow-light($colorMap) {
+	@include shadow-helper(map.get($colorMap, 500), 0.4);
 }
 // Shadow used for non-white/light gray backgrounds
 // - Tinted for colored backgrounds
 @mixin shadow-dark($colorMap) {
-	box-shadow: 0 4px 6px 2px rgba(map.get($colorMap, 800), 0.2);
-	&:hover {
-		box-shadow: 0 4px 8px 3px rgba(map.get($colorMap, 800), 0.4);
-	}
-	&:active {
-		box-shadow: 0 2px 4px rgba(map.get($colorMap, 800), 0.2);
-	}
+	@include shadow-helper(map.get($colorMap, 800), 0.2);
 }
 
 // Color mixins for chaning material color
 @mixin color($colorMap) {
 	color: map.get($colorMap, 900);
 	background-color: map.get($colorMap, 300);
-	@include shadow($colorMap);
+	@include shadow-light($colorMap);
+	&:hover {
+		background-color: map.get($colorMap, 400);
+	}
 	&:active {
 		background-color: map.get($colorMap, 200);
 	}
@@ -33,31 +35,40 @@
 @mixin color-dark($colorMap) {
 	color: map.get($colorMap, 100);
 	background-color: map.get($colorMap, 800);
-	@include shadow($colorMap);
-	&:active {
+	@include shadow-light($colorMap);
+	&:hover {
 		background-color: map.get($colorMap, 700);
+	}
+	&:active {
+		background-color: map.get($colorMap, 600);
 	}
 }
 @mixin color-extra-dark($colorMap) {
 	color: map.get($colorMap, 200);
 	background-color: map.get($colorMap, 900);
 	@include shadow-dark($colorMap);
-	&:active {
+	&:hover {
 		background-color: map.get($colorMap, 800);
+	}
+	&:active {
+		background-color: map.get($colorMap, 700);
 	}
 }
 
 // Standard material class
 .material {
-	transition: box-shadow ease 0.2s, color ease 0.2s, background ease 0.2s;
+	transition: box-shadow ease 0.3s, color ease 0.3s, background ease 0.3s;
 }
 
 // Colors
 .white {
 	background-color: map.get(colors.$gray, 0);
-	@include shadow(colors.$gray);
+	@include shadow-light(colors.$gray);
+	&:hover {
+		background-color: map.get(colors.$gray, 100);
+	}
 	&:active {
-		background-color: map.get(colors.$gray, 200);
+		background-color: map.get(colors.$gray, 300);
 	}
 }
 .gray {

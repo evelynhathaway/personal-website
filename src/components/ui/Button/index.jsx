@@ -4,9 +4,9 @@ import classNames from "classnames";
 import styles from "./styles.module.scss";
 import materialStyles from "../../../styles/material.module.scss";
 
-export {default as ChipAnchor} from "./ChipAnchor";
+export {default as ButtonAnchor} from "./ButtonAnchor";
 
-export default function Chip({thumbnail, thumbnailSize, text, color, shade, raised, className}) {
+export default function Button({outline, color, shade, raised, className, children}) {
 	return (
 		<div className={
 			classNames(
@@ -14,33 +14,21 @@ export default function Chip({thumbnail, thumbnailSize, text, color, shade, rais
 				color && materialStyles[color || "white"],
 				shade && materialStyles[`${shade}Shade`],
 				raised && materialStyles.raised,
-				styles.Chip,
+				styles.Button,
+				outline && styles.outline,
 				className,
 			)
 		}>
-			{/* Add image/icon if there is one */}
-			{thumbnail && (
-				<span className={
-					classNames(
-						styles.thumbnail,
-						thumbnailSize === "full" && styles.fullSize,
-					)}>
-					{thumbnail}
-				</span>
-			)}
-			<span className={styles.text}>
-				{text}
-			</span>
+			{children}
 		</div>
 	);
 }
 
-Chip.propTypes = {
-	thumbnail: PropTypes.node,
-	thumbnailSize: PropTypes.oneOf(["full"]),
-	text: PropTypes.node.isRequired,
+Button.propTypes = {
+	outline: PropTypes.bool,
 	color: PropTypes.string,
 	shade: PropTypes.string,
 	raised: PropTypes.bool,
 	className: PropTypes.string,
+	children: PropTypes.node,
 };

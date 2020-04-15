@@ -47,13 +47,13 @@ export default function TilesSection() {
 			<div className={styles.chips}>
 				<ChipAnchor
 					href="mailto:hey@evelyn.dev" rel="noopener" target="_blank" title="Email me"
-					shade="warm" color="white"
+					shade="warm" color="white" raised
 					text="Contact"
 					thumbnail={<Icon material="email" className={styles.chipIcon} />}
 				/>
 				<ChipAnchor
 					href="https://github.com/evelynhathaway" rel="noopener" target="_blank" title="View my GitHub profile"
-					shade="warm" color="white"
+					shade="warm" color="white" raised
 					text="Code"
 					thumbnail={
 						<Icon
@@ -65,7 +65,7 @@ export default function TilesSection() {
 				/>
 				<ChipAnchor
 					href="https://www.linkedin.com/in/evelynhathaway/" rel="noopener" target="_blank" title="View my LinkedIn profile"
-					shade="warm" color="white"
+					shade="warm" color="white" raised
 					text="Connect"
 					thumbnail={
 						<Icon
@@ -77,7 +77,7 @@ export default function TilesSection() {
 				/>
 				<ChipAnchor
 					href="https://goo.gl/maps/9x98A5BuH4vLB3G1A" rel="noopener" target="_blank" title="View my city on Google Maps"
-					shade="warm" color="white"
+					shade="warm" color="white" raised
 					text="Seattle, WA"
 					thumbnail={<Icon material="place" label="Location" className={styles.chipIcon} />}
 				/>
