@@ -86,7 +86,9 @@ export default function TilesSection() {
 			</div>
 
 			{/* Navigation */}
-			<Navigation center />
+			<div className={styles.outerNavContainer}>
+				<Navigation center />
+			</div>
 
 			{/* Tiles Background */}
 			<Tiles />

@@ -211,3 +211,10 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 		opacity: 0.9;
 	}
 }
+
+.outerNavContainer {
+	padding: 0 80px;
+	@include medium {
+		padding: 0;
+	}
+}
