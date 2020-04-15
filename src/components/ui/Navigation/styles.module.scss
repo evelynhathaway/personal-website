@@ -1,0 +1,26 @@
+@mixin xsmall {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+.Navigation {
+	padding: 22px 4px;
+	max-width: 100%;
+	margin: auto;
+	overflow-x: auto;
+	&.center {
+		text-align: center;
+	}
+	@include xsmall {
+		padding: 12px 4px;
+	}
+}
+
+.navContainer {
+	display: inline-flex;
+	align-items: center;
+	> * {
+		margin: 0 8px;
+	}
+}
