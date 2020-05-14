@@ -97,6 +97,9 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	.tagline {
 		font-size: 1.25em;
 		font-weight: 700;
+		max-width: 50ch;
+		margin-left: auto;
+		margin-right: auto;
 		@include small {
 			font-size: 1em;
 		}
@@ -116,7 +119,6 @@ $border-shade: 6px solid rgba(0, 0, 0, 0.1);
 	padding: 40px;
 	position: relative;
 	margin-right: 40px;
-	text-wrap: balance; // Proposed CSS, see adobe/balance-text and the CSS Text Module Level 4 Editor's Draft
 	@include small {
 		border-radius: 32px 32px 0 32px;
 		padding: 24px;
