@@ -1,9 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
-export default function Icon({material, svg, label, className}) {
+
+export default function Icon ({material, svg, label, className}) {
 	label = label || material?.replace(/_/g, " ");
 	return (
 		<span
@@ -13,7 +14,7 @@ export default function Icon({material, svg, label, className}) {
 				className,
 			)}
 			aria-label={label}
-			role={"img"}
+			role="img"
 		>
 			{material || <svg viewBox="0 0 24 24"><path fill="currentColor" d={svg}/></svg>}
 		</span>

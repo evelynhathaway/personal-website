@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import classNames from "classnames";
-import styles from "./styles.module.scss";
-import Worker from "./offscreenCanvas.worker";
+import Worker from "./offscreen-canvas.worker";
 import {render} from "./render";
+import styles from "./styles.module.scss";
 
 
 const setUpCanvas = function ({current: canvasElement}, {current: containerElement}, setRendered) {
@@ -78,14 +78,18 @@ export default function Tiles () {
 	// Store rendered state for making the element visable
 	const [rendered, setRendered] = useState(false);
 	// Setup canvas on first render
-	useEffect(() => setUpCanvas(canvasRef, containerRef, setRendered), []);
+	useEffect(() => (
+		setUpCanvas(canvasRef, containerRef, setRendered)
+	), []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
-		<div className={classNames(
-			styles.Tiles,
-			rendered && styles.rendered,
-		)} ref={containerRef}>
-			<canvas className={styles.canvas} ref={canvasRef} role="presentation"></canvas>
+		<div
+			className={classNames(
+				styles.Tiles,
+				rendered && styles.rendered,
+			)} ref={containerRef}
+		>
+			<canvas className={styles.canvas} ref={canvasRef} alt="" />
 		</div>
 	);
 }

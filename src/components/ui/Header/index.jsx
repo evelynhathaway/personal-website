@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./styles.module.scss";
 import Navigation from "../Navigation";
+import styles from "./styles.module.scss";
 
-export default function Header({title}) {
+
+export default function Header ({title}) {
 	return (
 		<header className={styles.Header}>
 			{/* Picture */}

@@ -1,8 +1,9 @@
 import React from "react";
+import AboutSection from "../components/sections/AboutSection";
+import ProjectsSection from "../components/sections/ProjectsSection";
+import TilesSection from "../components/sections/TilesSection";
 import Layout from "../components/utils/Layout";
 import SEO from "../components/utils/SEO";
-import TilesSection from "../components/sections/TilesSection";
-import AboutSection from "../components/sections/AboutSection";
 
 
 export default function IndexPage () {
@@ -12,7 +13,7 @@ export default function IndexPage () {
 			<main>
 				<TilesSection/>
 				<AboutSection/>
-				{/* <ProjectsSection/> */}
+				<ProjectsSection/>
 			</main>
 		</Layout>
 	);

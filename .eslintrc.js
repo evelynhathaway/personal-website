@@ -5,6 +5,8 @@ module.exports = {
 
 	"extends": [
 		"plugin:evelyn/default",
+		"plugin:evelyn/extensions",
+		"plugin:evelyn/json",
 		"plugin:evelyn/babel",
 	],
 
@@ -13,9 +15,20 @@ module.exports = {
 			"files": [
 				"src/**/*.js",
 				"src/**/*.jsx",
+				"src/**/*.tsx",
+				"gatsby-ssr.js",
 			],
 			"extends": [
 				"plugin:evelyn/react",
+			],
+		},
+		{
+			"files": [
+				"src/**/*.ts",
+				"src/**/*.tsx",
+			],
+			"extends": [
+				"plugin:evelyn/typescript",
 			],
 		},
 		{
@@ -25,14 +38,6 @@ module.exports = {
 			"extends": [
 				"plugin:evelyn/node",
 				"plugin:evelyn/source",
-			],
-		},
-		{
-			"files": [
-				"gatsby-ssr.js",
-			],
-			"extends": [
-				"plugin:evelyn/react",
 			],
 		},
 	],

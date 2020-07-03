@@ -7,8 +7,9 @@ import styles from "./styles.module.scss";
 	- Examples: Links for buttons, chips, cards, etc.
 */
 
-export default function UnstyledAnchor(props) {
+export default function UnstyledAnchor (props) {
 	return (
+		// eslint-disable-next-line jsx-a11y/anchor-has-content
 		<a className={styles.UnstyledAnchor} {...props}/>
 	);
 }

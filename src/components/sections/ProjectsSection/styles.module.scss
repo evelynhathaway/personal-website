@@ -1,0 +1,169 @@
+.ProjectsSection {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+	-webkit-column-gap: 1.25rem;
+	-moz-column-gap: 1.25rem;
+	column-gap: 1.25rem;
+	orphans: 1;
+	widows: 1;
+}
+.ProjectsSection2 {
+	-webkit-column-count: 3;
+	-moz-column-count: 3;
+	column-count: 3;
+	-webkit-column-gap: 1.25rem;
+	-moz-column-gap: 1.25rem;
+	column-gap: 1.25rem;
+	orphans: 1;
+	widows: 1;
+}
+
+.card {
+	position: relative;
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: map.get(colors.$orange, 400);
+	display: inline-block;
+	box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card.blue {
+	background-color: map.get(colors.$blue, 400);
+}
+.card.lilac {
+	background-color: map.get(colors.$lilac, 400);
+}
+
+.image {
+	transition: opacity 0.2s ease 0s;
+	opacity: 0.7;
+	margin: 0px;
+	display: block;
+}
+.card:hover .image,
+.card:focus .image {
+	opacity: 1;
+}
+.card:active .image {
+	opacity: 0.6;
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.overlayText {
+	padding: 4px 12px;
+	background-color: map.get(colors.$gray, 0);
+	color: hsla(0,0%,0%,0.8);
+	box-shadow: 0 6px 0 rgba(map.get(colors.$orange, 900), 0.2);
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid rgba(map.get(colors.$gray, 1000), 0.2);
+	border-radius: 0 4px 4px 0;
+	display: inline-block;
+	max-width: 80%;
+	margin: 6px 0;
+	transition: background 0.2s ease 0s, box-shadow 0.2s ease 0s, border 0.2s ease 0s;
+}
+.card:hover .overlayText,
+.card:focus .overlayText {
+	// background-color: map.get(colors.$gray, 100);
+	box-shadow: 0 6px 0 rgba(map.get(colors.$gray, 1000), 0.1);
+}
+.card:active .overlayText {
+	background-color: map.get(colors.$gray, 200);
+	box-shadow: 0 6px 0 rgba(map.get(colors.$gray, 1000), 0.3);
+}
+h3 {
+	font-size: 3em;
+}
+p {
+	padding: 2px 12px;
+	font-weight: 600;
+	text-align: center;
+}
+
+
+/*
+	View on GitHub
+	p tag above others
+*/
+// margin-bottom: auto;
+// font-weight: 800;
+// .styles-module--image--2pV9N {
+//     transition: opacity 0.2s ease 0s;
+//     opacity: 0.7;
+//     margin: 0px;
+//     display: block;
+//     min-width: 24vw;
+// }
+// .styles-module--overlay--1GsVc {
+//     position: absolute;
+//     top: -60px;
+//     bottom: 0;
+//     z-index: 5;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-end;
+//     align-items: flex-start;
+//     padding-bottom: 24px;
+//     transition: bottom 0.2s ease, top 0.2s ease;
+//     right: 0;
+    // left: 0;
+// }
+
+// .styles-module--overlayText--3rSin {
+//     padding: 4px 12px;
+//     background-color: #FFFFFF;
+//     color: rgba(0, 0, 0, 0.8);
+//     box-shadow: 0 6px 0 rgba(61, 29, 14, 0.2);
+//     border-top: 6px solid transparent;
+//     border-bottom: 6px solid rgba(0, 0, 0, 0.2);
+//     border-radius: 0 4px 4px 0;
+//     display: inline-block;
+//     max-width: 90%;
+//     margin: 6px 0;
+//     transition: background 0.2s ease 0s, box-shadow 0.2s ease 0s, border 0.2s ease 0s, font 0.2s ease 0s;
+// }
+
+// h3 {
+//     font-size: 2rem; // Maybe only use the smaller sizes on the smaller cards on large viewports
+// }
+
+// .styles-module--card--okVux:hover h3.styles-module--overlayText--3rSin {
+//     font-size: 1.75rem; // Maybe only use the smaller sizes on the smaller cards on large viewports
+// }
+
+// .styles-module--card--okVux:hover .styles-module--overlay--1GsVc {
+//     /* opacity: 0; */
+//     bottom: -106px !important;
+//     top: 0 !important;
+// }
+
+
+
+
+
+
+/*
+	JS Way
+*/
+// Add these when hovered with JS
+// Disable all card motion when perfers reduced motion or noscript
+element.styles {
+	// opacity: 0;
+	top: 32px; // Padding, border, margin between and bottom
+	margin-bottom: calc(-74.4px - 24px); // boundingRectHeight + bottom padding
+}
+
+p.styles-module--overlayText--3rSin {
+	transition: margin 0.2s ease, top 0.2s ease;
+}

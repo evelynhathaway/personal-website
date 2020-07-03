@@ -1,15 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
-import styles from "./styles.module.scss";
+import PropTypes from "prop-types";
 import materialStyles from "../../../styles/material.module.scss";
+import styles from "./styles.module.scss";
+
 
 export {default as ButtonAnchor} from "./ButtonAnchor";
 
-export default function Button({outline, color, shade, raised, className, children}) {
+export default function Button ({outline, color, shade, raised, className, children}) {
 	return (
-		<div className={
-			classNames(
+		<div
+			className={classNames(
 				materialStyles.material,
 				color && materialStyles[color || "white"],
 				shade && materialStyles[`${shade}Shade`],
@@ -17,8 +18,8 @@ export default function Button({outline, color, shade, raised, className, childr
 				styles.Button,
 				outline && styles.outline,
 				className,
-			)
-		}>
+			)}
+		>
 			{children}
 		</div>
 	);

@@ -1,30 +1,32 @@
 import React from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
-import styles from "./styles.module.scss";
+import PropTypes from "prop-types";
 import materialStyles from "../../../styles/material.module.scss";
+import styles from "./styles.module.scss";
+
 
 export {default as ChipAnchor} from "./ChipAnchor";
 
-export default function Chip({thumbnail, thumbnailSize, text, color, shade, raised, className}) {
+export default function Chip ({thumbnail, thumbnailSize, text, color, shade, raised, className}) {
 	return (
-		<div className={
-			classNames(
+		<div
+			className={classNames(
 				materialStyles.material,
 				color && materialStyles[color || "white"],
 				shade && materialStyles[`${shade}Shade`],
 				raised && materialStyles.raised,
 				styles.Chip,
 				className,
-			)
-		}>
+			)}
+		>
 			{/* Add image/icon if there is one */}
 			{thumbnail && (
-				<span className={
-					classNames(
+				<span
+					className={classNames(
 						styles.thumbnail,
 						thumbnailSize === "full" && styles.fullSize,
-					)}>
+					)}
+				>
 					{thumbnail}
 				</span>
 			)}

@@ -1,5 +1,6 @@
 const path = require("path");
 
+
 const buildMode = process.env.BUILD_ENV || "production";
 const siteUrl = buildMode === "production" ? "https://evelyn.dev" : "https://beta.evelyn.dev";
 

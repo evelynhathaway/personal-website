@@ -2,6 +2,7 @@
 // In webpack, use `import` or `require` instead of `importScripts()`
 import {render} from "./render";
 
+
 let canvasElement;
 let canvasContext;
 const setup = function (offscreenCanvas) {

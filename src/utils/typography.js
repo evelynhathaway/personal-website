@@ -1,5 +1,6 @@
 import Typography from "typography";
 
+
 const typography = new Typography(
 	{
 		// Match against typography.scss

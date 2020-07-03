@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Chip from "./index";
 import UnstyledAnchor from "../../utils/UnstyledAnchor";
+import Chip from "./index";
 
-export default function ChipAnchor({thumbnail, thumbnailSize, text, color, shade, raised, className, ...anchorProps}) {
+
+export default function ChipAnchor ({thumbnail, thumbnailSize, text, color, shade, raised, className, ...anchorProps}) {
 	return (
 		<UnstyledAnchor {...anchorProps}>
 			<Chip thumbnail={thumbnail} thumbnailSize={thumbnailSize} text={text} color={color} shade={shade} raised={raised} className={className}/>

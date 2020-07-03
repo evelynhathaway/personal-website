@@ -1,0 +1,50 @@
+/*
+	Local Definitions
+*/
+@mixin large {
+	@media (max-width: 1600px) {
+		@content;
+	}
+}
+@mixin medium {
+	@media (max-width: 1200px) {
+		@content;
+	}
+}
+@mixin small {
+	@media (max-width: 900px) {
+		@content;
+	}
+}
+@mixin xsmall {
+	@media (max-width: 800px) {
+		@content;
+	}
+}
+@mixin xxsmall {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+.Container {
+	padding: 0 80px;
+	margin: auto;
+	max-width: 1600px;
+	@include medium {
+		padding: 0 40px;
+	}
+	@include xsmall {
+		padding: 0 12px;
+	}
+
+	.inner {
+		margin: 0 80px;
+		@include medium {
+			margin: 0 12px;
+		}
+		@include xsmall {
+			margin: 0;
+		}
+	}
+}
