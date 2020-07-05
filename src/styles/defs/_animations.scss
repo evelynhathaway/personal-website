@@ -1,0 +1,29 @@
+$base-transition: 0.2s ease;
+$base-transition-quick: 0.1s ease;
+
+$transition-default: background $base-transition, box-shadow $base-transition, border $base-transition, color $base-transition, font $base-transition;
+$transition-default-quick: background $base-transition-quick, box-shadow $base-transition-quick, border $base-transition-quick, color $base-transition-quick, font $base-transition-quick;
+
+@mixin transition-default {
+	transition: $transition-default;
+}
+@mixin transition-default-quick {
+	transition: $transition-default;
+}
+
+@mixin sensitive {
+	@media (prefers-reduced-motion: reduce) {
+		@content;
+	}
+}
+@mixin semi-sensitive-transition ($reduced) {
+	@include sensitive {
+		transition: $reduced;
+		@content;
+	}
+}
+@mixin sensitive-transition {
+	@include semi-sensitive-transition(initial) {
+		@content;
+	};
+}

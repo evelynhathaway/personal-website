@@ -20,6 +20,7 @@ module.exports = {
 				implementation: require("sass"),
 				data: `
 					@use "sass:map";
+					@use "animations.scss";
 					@use "colors.scss";
 					@use "typography.scss";
 				`,

@@ -57,7 +57,7 @@
 
 // Standard material class
 .material {
-	transition: box-shadow ease 0.3s, color ease 0.3s, background ease 0.3s;
+	@include animations.transition-default;
 }
 
 // Colors
