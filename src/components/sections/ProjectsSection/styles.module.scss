@@ -104,12 +104,16 @@
 			opacity: 1;
 		}
 
-		.overlay {
-			top: 0;
-		}
 
 		.overlayText {
 			box-shadow: 0 6px 0 rgba(map.get(colors.$gray, 1000), 0.1);
+		}
+
+	}
+	// Not quite like hover + focus with a touch screen
+	&.isHover {
+		.overlay {
+			top: 0;
 		}
 
 		h3.overlayText {

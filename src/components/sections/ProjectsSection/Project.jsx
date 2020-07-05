@@ -1,9 +1,10 @@
 import React, {useState, useRef} from "react";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import materialStyles from "../../../styles/material.module.scss";
+import Icon from "../../ui/Icon";
 import UnstyledAnchor from "../../utils/UnstyledAnchor";
 import styles from "./styles.module.scss";
-import Icon from "../../ui/Icon";
 
 
 export default function Project ({
@@ -17,11 +18,14 @@ export default function Project ({
 	const descriptionRef = useRef();
 	const [isHovered, setIsHovered] = useState(false);
 	const [isFocused, setIsFocused] = useState(false);
+	const [isTouched, setIsTouched] = useState(false);
 
 	const hover = setIsHovered.bind(undefined, true);
 	const unhover = setIsHovered.bind(undefined, false);
 	const focus = setIsFocused.bind(undefined, true);
 	const unfocus = setIsFocused.bind(undefined, false);
+	const touch = setIsTouched.bind(undefined, true);
+	const untouch = setIsTouched.bind(undefined, false);
 
 	return (
 		<UnstyledAnchor
@@ -32,6 +36,8 @@ export default function Project ({
 			onBlur={unfocus}
 			onMouseEnter={hover}
 			onMouseLeave={unhover}
+			onTouchStart={touch}
+			onTouchEnd={untouch}
 			className={classNames(
 				materialStyles.material,
 				materialStyles.raised,
@@ -39,6 +45,7 @@ export default function Project ({
 				overlayColor && styles[overlayColor],
 				styles.card,
 				iconProject && styles.iconProject,
+				(isHovered || isFocused || isTouched) && styles.isHover,
 			)}
 		>
 			<article>
@@ -53,7 +60,7 @@ export default function Project ({
 					<p
 						className={styles.overlayText}
 						ref={descriptionRef}
-						style={isHovered || isFocused? {
+						style={isHovered || isFocused || isTouched ? {
 							marginBottom: -descriptionRef.current.getBoundingClientRect().height - 12,
 						} : undefined}
 					>
@@ -66,3 +73,13 @@ export default function Project ({
 		</UnstyledAnchor>
 	);
 }
+
+
+Project.propTypes = {
+	iconProject: PropTypes.boolean,
+	overlayColor: PropTypes.string.isRequired,
+	link: PropTypes.string.isRequired,
+	title: PropTypes.node.isRequired,
+	description: PropTypes.node.isRequired,
+	image: PropTypes.node.isRequired,
+};
