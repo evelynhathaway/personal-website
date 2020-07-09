@@ -1,11 +1,46 @@
 import React from "react";
 import Emoji from "a11y-react-emoji";
+import {graphql, useStaticQuery} from "gatsby";
+import Img from "gatsby-image";
 import Container from "../../utils/Container";
 import Project from "./Project";
 import styles from "./styles.module.scss";
+import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
+import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
+import pluotIcon from "../../../assets/images/projects/icons/pluot.svg";
+import willMutateIcon from "../../../assets/images/projects/icons/will-mutate.svg";
 
 
 export default function ProjectsSection () {
+	const data = useStaticQuery(graphql`
+		query {
+			rocketry: file(relativePath: {eq: "projects/covers/rocketry.png"}) {
+				childImageSharp {
+					fluid(
+						webpQuality: 90,
+						traceSVG: {
+							color: "#80223A"
+						}
+					) {
+						...GatsbyImageSharpFluid_withWebp_tracedSVG
+					}
+				}
+			}
+			tritonPoll: file(relativePath: {eq: "projects/covers/triton-poll.png"}) {
+				childImageSharp {
+					fluid(
+						webpQuality: 90,
+						traceSVG: {
+							color: "#1F6C80"
+						}
+					) {
+						...GatsbyImageSharpFluid_withWebp_tracedSVG
+					}
+				}
+			}
+		}
+	`);
+
 	return (
 		<Container>
 			<h2>Projects</h2>
@@ -21,10 +56,7 @@ export default function ProjectsSection () {
 						</>
 					)}
 					image={(
-						<img
-							src="https://github.com/rocketryjs/assets/raw/master/edited/SDIM0036-adjusted-16_9-tilt-shift.png"
-							alt="MIDI Controller with RGB lights"
-						/>
+						<Img className={styles.gatsbyImage} alt="MIDI Controller with RGB lights" fluid={data.rocketry.childImageSharp.fluid} />
 					)}
 					overlayColor="orange"
 				/>
@@ -39,10 +71,7 @@ export default function ProjectsSection () {
 						</>
 					)}
 					image={(
-						<img
-							src="https://pro2-bar-s3-cdn-cf6.myportfolio.com/352538c0-ae27-4b15-80e1-4dc31e0cd823/7526b832-f850-449a-8163-a40c49220dbe_rw_600.png?h=899180133f5071bb053a4c5dfd6943cb"
-							alt="Screenshot of Triton Poll"
-						/>
+						<Img className={styles.gatsbyImage} alt="Screenshot of Triton Poll" fluid={data.tritonPoll.childImageSharp.fluid} />
 					)}
 					overlayColor="blue"
 				/>
@@ -59,7 +88,7 @@ export default function ProjectsSection () {
 					)}
 					image={(
 						<img
-							src="https://github.com/evelynhathaway/eslint-plugin-evelyn/raw/master/.github/icon.png"
+							src={eslintPluginIcon}
 							alt="Icon"
 						/>
 					)}
@@ -78,7 +107,7 @@ export default function ProjectsSection () {
 					)}
 					image={(
 						<img
-							src="https://github.com/evelynhathaway/bind-deep/raw/master/.github/icon.png"
+							src={bindDeepIcon}
 							alt="Icon"
 						/>
 					)}
@@ -97,7 +126,7 @@ export default function ProjectsSection () {
 					)}
 					image={(
 						<img
-							src="https://github.com/ceoss/will-mutate/raw/master/.github/icon.png"
+							src={willMutateIcon}
 							alt="Icon"
 						/>
 					)}
@@ -116,10 +145,11 @@ export default function ProjectsSection () {
 					)}
 					image={(
 						<img
-							src="https://github.com/evelynhathaway/pluot/raw/master/.github/icon.png"
+							src={pluotIcon}
 							alt="Icon"
 						/>
 					)}
+					overlayColor="orange"
 				/>
 			</div>
 		</Container>

@@ -76,7 +76,7 @@ export default function Project ({
 
 
 Project.propTypes = {
-	iconProject: PropTypes.boolean,
+	iconProject: PropTypes.bool,
 	overlayColor: PropTypes.string.isRequired,
 	link: PropTypes.string.isRequired,
 	title: PropTypes.node.isRequired,

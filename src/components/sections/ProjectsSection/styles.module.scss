@@ -4,6 +4,9 @@
 	margin: -12px;
 }
 
+.gatsbyImage {
+	position: initial !important;
+}
 
 .card {
 	min-width: 300px;
@@ -36,7 +39,7 @@
 		transition: opacity animations.$base-transition;
 		opacity: 0.7;
 
-		img {
+		img, picture {
 			width: 100%;
 			height: auto;
 			margin: 0px;
