@@ -24,6 +24,21 @@
     "start": "gatsby build && gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -x ./conventional-changelog-evelyn/commitlint.config.js -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/package.json": "sort-package-json",
+    "./": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
   "dependencies": {
     "a11y-react-emoji": "^1.1.2",
     "classnames": "^2.2.6",
@@ -49,9 +64,12 @@
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.10.4",
+    "@commitlint/prompt": "^9.1.1",
     "@typescript-eslint/eslint-plugin": "^3.5.0",
     "@typescript-eslint/parser": "^3.5.0",
     "babel-preset-gatsby": "^0.5.1",
+    "commitlint": "^9.1.0",
+    "conventional-changelog-evelyn": "^1.2.0",
     "eslint": "^7.3.1",
     "eslint-plugin-evelyn": "^3.0.0-beta.0",
     "eslint-plugin-import": "^2.22.0",
@@ -60,6 +78,9 @@
     "eslint-plugin-react-hooks": "^4.0.5",
     "eslint-plugin-unicorn": "^20.1.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "sort-package-json": "^1.44.0",
     "typescript": "^3.9.6",
     "worker-loader": "^2.0.0"
   },
