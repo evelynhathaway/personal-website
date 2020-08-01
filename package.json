@@ -27,8 +27,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -x ./conventional-changelog-evelyn/commitlint.config.js -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "commitlint": {
+    "extends": "./node_modules/conventional-changelog-evelyn/commitlint.config.js"
   },
   "lint-staged": {
     "**/package.json": "sort-package-json",
@@ -48,6 +51,7 @@
     "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-preload-fonts": "^1.2.16",
     "gatsby-plugin-react-helmet": "^3.3.9",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
     "gatsby-plugin-sass": "^2.3.10",
     "gatsby-plugin-sharp": "^2.6.17",

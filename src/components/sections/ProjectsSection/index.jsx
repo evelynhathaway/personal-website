@@ -2,13 +2,14 @@ import React from "react";
 import Emoji from "a11y-react-emoji";
 import {graphql, useStaticQuery} from "gatsby";
 import Img from "gatsby-image";
+import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
+import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
+import looseRGBIcon from "../../../assets/images/projects/icons/loose-rgb.svg";
+import pluotIcon from "../../../assets/images/projects/icons/pluot.svg";
+import willMutateIcon from "../../../assets/images/projects/icons/will-mutate.svg";
 import Container from "../../utils/Container";
 import Project from "./Project";
 import styles from "./styles.module.scss";
-import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
-import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
-import pluotIcon from "../../../assets/images/projects/icons/pluot.svg";
-import willMutateIcon from "../../../assets/images/projects/icons/will-mutate.svg";
 
 
 export default function ProjectsSection () {
@@ -77,25 +78,6 @@ export default function ProjectsSection () {
 				/>
 				<Project
 					iconProject
-					title="ESLint Plugin Evelyn"
-					link="https://github.com/evelynhathaway/eslint-plugin-evelyn"
-					description={(
-						<>
-							Plugin for my projects with my preferred code style and bugfixes
-							{" "}
-							<Emoji symbol="🔮" label="crystal ball" /><Emoji symbol="🧹" label="broom" />
-						</>
-					)}
-					image={(
-						<img
-							src={eslintPluginIcon}
-							alt="Icon"
-						/>
-					)}
-					overlayColor="lilac"
-				/>
-				<Project
-					iconProject
 					title="Bind Deep"
 					link="https://github.com/evelynhathaway/bind-deep"
 					description={(
@@ -115,6 +97,25 @@ export default function ProjectsSection () {
 				/>
 				<Project
 					iconProject
+					title="Loose RGB"
+					link="https://github.com/evelynhathaway/loose-rgb"
+					description={(
+						<>
+							Normalizes RGB color data types to a certain format
+							{" "}
+							<Emoji symbol="🎨" label="palette" /><Emoji symbol="🃏" label="joker playing card" />
+						</>
+					)}
+					image={(
+						<img
+							src={looseRGBIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="lilac"
+				/>
+				<Project
+					iconProject
 					title="Will Mutate"
 					link="https://github.com/ceoss/will-mutate"
 					description={(
@@ -131,6 +132,25 @@ export default function ProjectsSection () {
 						/>
 					)}
 					overlayColor="mint"
+				/>
+				<Project
+					iconProject
+					title="ESLint Plugin Evelyn"
+					link="https://github.com/evelynhathaway/eslint-plugin-evelyn"
+					description={(
+						<>
+							Plugin for my projects with my preferred code style and bugfixes
+							{" "}
+							<Emoji symbol="🔮" label="crystal ball" /><Emoji symbol="🧹" label="broom" />
+						</>
+					)}
+					image={(
+						<img
+							src={eslintPluginIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="lilac"
 				/>
 				<Project
 					iconProject

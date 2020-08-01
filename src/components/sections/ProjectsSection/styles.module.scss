@@ -21,6 +21,7 @@
 	margin: 12px;
 	&.iconProject {
 		flex-basis: calc(25% - 24px);
+		max-width: calc(50% - 24px);
 	}
 	&.orange {
 		background-color: map.get(colors.$orange, 400);

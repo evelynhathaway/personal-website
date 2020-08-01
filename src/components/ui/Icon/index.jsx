@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
 
-export default function Icon ({material, svg, label, className}) {
+export default function Icon ({material, svg, label, decorative, className}) {
 	label = label || material?.replace(/_/g, " ");
 	return (
 		<span
@@ -15,8 +15,9 @@ export default function Icon ({material, svg, label, className}) {
 			)}
 			aria-label={label}
 			role="img"
+			aria-hidden={decorative}
 		>
-			{material || <svg viewBox="0 0 24 24"><path fill="currentColor" d={svg}/></svg>}
+			{material || svg}
 		</span>
 	);
 }
