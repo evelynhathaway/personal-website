@@ -13,6 +13,14 @@ module.exports = {
 	"overrides": [
 		{
 			"files": [
+				"*.d.ts",
+			],
+			"rules": {
+				"import/newline-after-import": "off",
+			},
+		},
+		{
+			"files": [
 				"src/**/*.js",
 				"src/**/*.jsx",
 				"src/**/*.tsx",
@@ -21,6 +29,10 @@ module.exports = {
 			"extends": [
 				"plugin:evelyn/react",
 			],
+			"rules": {
+				// React requires null sometimes
+				"unicorn/no-null": "off",
+			},
 		},
 		{
 			"files": [

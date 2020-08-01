@@ -1,13 +1,19 @@
-import React, {useEffect, useState} from "react";
-import classNames from "classnames";
+import React, {useEffect, useState, useRef} from "react";
+import clsx from "clsx";
 import Worker from "./offscreen-canvas.worker";
 import {render} from "./render";
 import styles from "./styles.module.scss";
 
 
-const setUpCanvas = function ({current: canvasElement}, {current: containerElement}, setRendered) {
+const setUpCanvas = function (
+	{current: canvasElement}: React.RefObject<HTMLCanvasElement>,
+	{current: containerElement}: React.RefObject<HTMLDivElement>,
+	setRendered: React.Dispatch<React.SetStateAction<boolean>>,
+) {
+	if (!canvasElement || !containerElement) return;
+
 	const hasOffscreen = "OffscreenCanvas" in window;
-	let worker, offscreenCanvas, canvasContext;
+	let worker: Worker, offscreenCanvas: OffscreenCanvas, canvasContext: CanvasRenderingContext2D;
 	if (hasOffscreen) {
 		// Transfer to a worker if there is support to handle off the main thread
 		worker = new Worker();
@@ -15,7 +21,7 @@ const setUpCanvas = function ({current: canvasElement}, {current: containerEleme
 		worker.postMessage({offscreenCanvas}, [offscreenCanvas]);
 	} else {
 		// New canvas context, allow alpha for initial styles
-		canvasContext = canvasElement.getContext("2d");
+		canvasContext = canvasElement.getContext("2d")!;
 	}
 
 
@@ -70,10 +76,10 @@ const setUpCanvas = function ({current: canvasElement}, {current: containerEleme
 };
 
 
-export default function Tiles () {
+export default function Tiles (): JSX.Element {
 	// Create ref for canvas
-	const canvasRef = React.createRef();
-	const containerRef = React.createRef();
+	const canvasRef = useRef<React.ElementRef<"canvas">>(null);
+	const containerRef = useRef<React.ElementRef<"div">>(null);
 
 	// Store rendered state for making the element visable
 	const [rendered, setRendered] = useState(false);
@@ -84,12 +90,12 @@ export default function Tiles () {
 
 	return (
 		<div
-			className={classNames(
+			className={clsx(
 				styles.Tiles,
 				rendered && styles.rendered,
 			)} ref={containerRef}
 		>
-			<canvas className={styles.canvas} ref={canvasRef} alt="" />
+			<canvas className={styles.canvas} ref={canvasRef} />
 		</div>
 	);
 }

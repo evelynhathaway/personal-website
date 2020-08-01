@@ -1,14 +1,21 @@
 import React from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 
-export default function Icon ({material, svg, label, decorative, className}) {
+export interface IconProps {
+	material?: string;
+	svg?: React.ReactNode;
+	label?: string;
+	decorative?: boolean;
+	className?: string;
+}
+
+export default function Icon ({material, svg, label, decorative, className}: IconProps): JSX.Element {
 	label = label || material?.replace(/_/g, " ");
 	return (
 		<span
-			className={classNames(
+			className={clsx(
 				styles.Icon,
 				material && styles.material,
 				className,
@@ -21,10 +28,3 @@ export default function Icon ({material, svg, label, decorative, className}) {
 		</span>
 	);
 }
-
-Icon.propTypes = {
-	material: PropTypes.string,
-	svg: PropTypes.string,
-	label: PropTypes.string,
-	className: PropTypes.string,
-};

@@ -1,7 +1,7 @@
 import React from "react";
 import Emoji from "a11y-react-emoji";
 import {graphql, useStaticQuery} from "gatsby";
-import Img from "gatsby-image";
+import Img, {FluidObject} from "gatsby-image";
 import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
 import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
 import looseRGBIcon from "../../../assets/images/projects/icons/loose-rgb.svg";
@@ -12,8 +12,11 @@ import Project from "./Project";
 import styles from "./styles.module.scss";
 
 
-export default function ProjectsSection () {
-	const data = useStaticQuery(graphql`
+export default function ProjectsSection (): JSX.Element {
+	const data: {
+		rocketry: {childImageSharp: {fluid: FluidObject}},
+		tritonPoll: {childImageSharp: {fluid: FluidObject}},
+	} = useStaticQuery(graphql`
 		query {
 			rocketry: file(relativePath: {eq: "projects/covers/rocketry.png"}) {
 				childImageSharp {

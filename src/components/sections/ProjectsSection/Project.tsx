@@ -1,12 +1,20 @@
 import React, {useState, useRef} from "react";
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import clsx from "clsx";
 import GitHubIcon from "../../../assets/images/icons/github.inline.svg";
 import materialStyles from "../../../styles/material.module.scss";
 import Icon from "../../ui/Icon";
 import UnstyledAnchor from "../../utils/UnstyledAnchor";
 import styles from "./styles.module.scss";
 
+
+export interface ProjectProps {
+	iconProject?: boolean;
+	overlayColor: "orange" | "blue" | "lilac" | "mint";
+	link: string;
+	title: React.ReactNode;
+	description: React.ReactNode;
+	image: React.ReactNode;
+}
 
 export default function Project ({
 	iconProject,
@@ -15,8 +23,8 @@ export default function Project ({
 	title,
 	description,
 	image,
-}) {
-	const descriptionRef = useRef();
+}: ProjectProps): JSX.Element {
+	const descriptionRef = useRef<React.ElementRef<"p">>(null);
 	const [isHovered, setIsHovered] = useState(false);
 	const [isFocused, setIsFocused] = useState(false);
 	const [isTouched, setIsTouched] = useState(false);
@@ -39,7 +47,7 @@ export default function Project ({
 			onMouseLeave={unhover}
 			onTouchStart={touch}
 			onTouchEnd={untouch}
-			className={classNames(
+			className={clsx(
 				materialStyles.material,
 				materialStyles.raised,
 				materialStyles.whiteShade,
@@ -51,7 +59,7 @@ export default function Project ({
 		>
 			<article>
 				<div className={styles.overlay}>
-					<p className={classNames(styles.overlayText, styles.viewOn)}>
+					<p className={clsx(styles.overlayText, styles.viewOn)}>
 						<Icon svg={<GitHubIcon />} />
 						<span>View on GitHub</span>
 					</p>
@@ -60,7 +68,7 @@ export default function Project ({
 						className={styles.overlayText}
 						ref={descriptionRef}
 						style={isHovered || isFocused || isTouched ? {
-							marginBottom: -descriptionRef.current.getBoundingClientRect().height - 12,
+							marginBottom: -(descriptionRef.current?.getBoundingClientRect().height || 0) - 12,
 						} : undefined}
 					>
 						{description}
@@ -72,13 +80,3 @@ export default function Project ({
 		</UnstyledAnchor>
 	);
 }
-
-
-Project.propTypes = {
-	iconProject: PropTypes.bool,
-	overlayColor: PropTypes.string.isRequired,
-	link: PropTypes.string.isRequired,
-	title: PropTypes.node.isRequired,
-	description: PropTypes.node.isRequired,
-	image: PropTypes.node.isRequired,
-};

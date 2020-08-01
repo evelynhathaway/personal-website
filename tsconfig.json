@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"module": "esnext",
+		"target": "es6",
+		"typeRoots": [
+			"src/typings"
+		],
+		"lib": [
+			"dom",
+			"esnext"
+		],
+		"jsx": "react",
+		"strict": true,
+		"isolatedModules": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"noEmit": true
+	},
+	"include": [
+		"src"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}

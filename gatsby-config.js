@@ -15,18 +15,20 @@ module.exports = {
 		"gatsby-plugin-sharp",
 		"gatsby-plugin-preload-fonts",
 		{
-			resolve: "gatsby-plugin-sass",
+			resolve: "gatsby-plugin-scss-typescript",
 			options: {
-				implementation: require("sass"),
-				data: `
-					@use "sass:map";
-					@use "animations.scss";
-					@use "colors.scss";
-					@use "typography.scss";
-				`,
-				includePaths: [
-					"src/styles/defs/",
-				],
+				sassLoaderOptions: {
+					implementation: require("sass"),
+					data: `
+						@use "sass:map";
+						@use "animations.scss";
+						@use "colors.scss";
+						@use "typography.scss";
+					`,
+					includePaths: [
+						"src/styles/defs/",
+					],
+				},
 			},
 		},
 		{
@@ -89,5 +91,6 @@ module.exports = {
 				},
 			},
 		},
+		"gatsby-plugin-typescript",
 	],
 };

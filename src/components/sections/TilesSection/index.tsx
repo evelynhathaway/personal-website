@@ -1,7 +1,7 @@
 import React from "react";
 import Emoji from "a11y-react-emoji";
 import {graphql, useStaticQuery} from "gatsby";
-import Img from "gatsby-image";
+import Img, {FluidObject} from "gatsby-image";
 import GitHubIcon from "../../../assets/images/icons/github.inline.svg";
 import LinkedInIcon from "../../../assets/images/icons/linkedin.inline.svg";
 import Tiles from "../../Tiles";
@@ -11,9 +11,11 @@ import Navigation from "../../ui/Navigation";
 import styles from "./styles.module.scss";
 
 
-export default function TilesSection () {
+export default function TilesSection (): JSX.Element {
 	// Load fluid image using Gatsby, GraphQL, and Sharp
-	const data = useStaticQuery(graphql`
+	const data: {
+		headshot: {childImageSharp: {fluid: FluidObject}},
+	} = useStaticQuery(graphql`
 		query {
 			headshot: file(relativePath: {eq: "headshot.png"}) {
 				childImageSharp {

@@ -1,10 +1,13 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Navigation from "../Navigation";
 import styles from "./styles.module.scss";
 
 
-export default function Header ({title}) {
+export interface HeaderProps {
+	title: string;
+}
+
+export default function Header ({title}: HeaderProps): JSX.Element {
 	return (
 		<header className={styles.Header}>
 			{/* Picture */}
@@ -13,7 +16,3 @@ export default function Header ({title}) {
 		</header>
 	);
 }
-
-Header.propTypes = {
-	title: PropTypes.string,
-};

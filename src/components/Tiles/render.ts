@@ -1,8 +1,9 @@
 // Palette colors from lightest to darkest
 import * as colors from "../../utils/colors";
 
+
 // Convert type for easy scripting, remove lightest and darkest colors
-const mapToTrimmedArray = (map) => [...map.values()].slice(1, -1);
+const mapToTrimmedArray = (map: Map<number, string>) => [...map.values()].slice(1, -1);
 const oranges = mapToTrimmedArray(colors.orange);
 const blues = mapToTrimmedArray(colors.blue);
 
@@ -10,12 +11,20 @@ const blues = mapToTrimmedArray(colors.blue);
 // - To whomever is reading my code, isn't it a lovely easter egg?
 // - Also, this is a way to get noise that prevents flashing since it is preserved in memory and wraps
 const userAgent = typeof navigator === "undefined" ? "Gatsby SSR" : navigator.userAgent;
-const charCodes = userAgent.split("").map(c => c.charCodeAt(0));
+type CharCodes = Array<number> & {
+	min: number;
+	max: number;
+	diff: number;
+}
+const charCodes = userAgent.split("").map(c => c.charCodeAt(0)) as CharCodes;
 charCodes.min = Math.min(...charCodes);
 charCodes.max = Math.max(...charCodes);
 charCodes.diff = charCodes.max - charCodes.min;
 
-export const render = function ({width, height, scale, canvasElement, canvasContext}) {
+export const render = function (
+	{width, height, scale, canvasElement, canvasContext}:
+	{width: number, height: number, scale: number, canvasElement: HTMLCanvasElement, canvasContext: CanvasRenderingContext2D}
+): void {
 	// 60px tiles on small screens, 80px tiles on large
 	const tileSize = width >= 600 ? 80 : 40;
 	// The number of tile columns (horizontal space)
@@ -34,7 +43,7 @@ export const render = function ({width, height, scale, canvasElement, canvasCont
 
 	// Is blue when above the line from (0, 0) to (lastRow, lastColumn)
 	// `+ 0.5` is used to give it a visual apearence as if the line is drawn from the center of the element
-	const isBlue = (x, y) => (y + 0.5) < ((rows / columns) * (x + 0.5));
+	const isBlue = (x: number, y: number) => (y + 0.5) < ((rows / columns) * (x + 0.5));
 
 	// Draw tiles in an (x, y) grid
 	for (let x = 0; x < columns; x++) {

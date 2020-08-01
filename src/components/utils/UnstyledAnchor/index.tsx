@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import styles from "./styles.module.scss";
 
 /*
@@ -7,9 +8,9 @@ import styles from "./styles.module.scss";
 	- Examples: Links for buttons, chips, cards, etc.
 */
 
-export default function UnstyledAnchor (props) {
+export default function UnstyledAnchor ({className, ...otherProps}: React.ComponentPropsWithoutRef<"a">): JSX.Element {
 	return (
 		// eslint-disable-next-line jsx-a11y/anchor-has-content
-		<a className={styles.UnstyledAnchor} {...props}/>
+		<a className={clsx(styles.UnstyledAnchor, className)} {...otherProps}/>
 	);
 }

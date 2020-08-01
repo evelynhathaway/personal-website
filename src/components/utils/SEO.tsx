@@ -1,23 +1,24 @@
 import React from "react";
-import {graphql, useStaticQuery} from "gatsby";
-import PropTypes from "prop-types";
+import {graphql, useStaticQuery, GatsbyConfig} from "gatsby";
 import {Helmet} from "react-helmet";
 import shareImage from "../../assets/images/share-image.png";
 
 
-SEO.propTypes = {
-	description: PropTypes.string,
-	lang: PropTypes.string,
-	title: PropTypes.string.isRequired,
-};
+export interface SEOProps {
+	description?: string;
+	lang?: string;
+	title: string;
+}
 
 
 export default function SEO ({
 	description = "",
 	lang = "en",
 	title,
-}) {
-	const {site: {siteMetadata: siteData}} = useStaticQuery(
+}: SEOProps): JSX.Element {
+	const {site: {siteMetadata: siteData}}: {
+		site: GatsbyConfig;
+	} = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -31,7 +32,7 @@ export default function SEO ({
 		`
 	);
 
-	const metaDescription = description || siteData.description;
+	const metaDescription = description || siteData?.description as string;
 
 	return (
 		<Helmet
@@ -39,11 +40,11 @@ export default function SEO ({
 				lang,
 			}}
 			title={title}
-			titleTemplate={`%s | ${siteData.title}`}
+			titleTemplate={`%s | ${siteData?.title as string}`}
 			meta={[
 				{
 					property: "og:url",
-					content: siteData.siteUrl,
+					content: siteData?.siteUrl as string,
 				},
 				{
 					property: "og:type",
@@ -61,18 +62,18 @@ export default function SEO ({
 					property: "profile:username",
 					content: "evelynhathaway",
 				},
-				{
+				({
 					property: "profile:gender",
 					"data-comment": "Open Graph: \"enum(male, female)\"; Evelyn, a rebel who fights for what's right by invalidating her own Open Graph data...",
 					content: "non-binary",
-				},
+				} as JSX.IntrinsicElements["meta"]),
 				{
 					property: "og:site_name",
-					content: siteData.title,
+					content: siteData?.title as string,
 				},
 				{
 					property: "name",
-					content: siteData.title,
+					content: siteData?.title as string,
 				},
 				{
 					property: "og:title",
@@ -104,11 +105,11 @@ export default function SEO ({
 				},
 				{
 					property: "og:image",
-					content: `${siteData.siteUrl}${shareImage}`,
+					content: `${siteData?.siteUrl as string}${shareImage}`,
 				},
 				{
 					name: "twitter:image",
-					content: `${siteData.siteUrl}${shareImage}`,
+					content: `${siteData?.siteUrl as string}${shareImage}`,
 				},
 				{
 					property: "og:image:alt",

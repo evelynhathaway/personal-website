@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 
 
-export default function Container ({children}) {
+export default function Container ({children}: {children: React.ReactNode}): JSX.Element {
 	return (
 		<div className={styles.Container}>
 			<div className={styles.inner}>
@@ -12,7 +11,3 @@ export default function Container ({children}) {
 		</div>
 	);
 }
-
-Container.propTypes = {
-	children: PropTypes.node.isRequired,
-};

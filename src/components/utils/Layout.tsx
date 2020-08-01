@@ -1,9 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../../styles/global.scss";
 
 
-export default function Layout ({children}) {
+export default function Layout ({children}: {children: React.ReactNode}): JSX.Element {
 	return (
 		// eslint-disable-next-line react/jsx-no-useless-fragment
 		<>
@@ -11,7 +10,3 @@ export default function Layout ({children}) {
 		</>
 	);
 }
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-};
