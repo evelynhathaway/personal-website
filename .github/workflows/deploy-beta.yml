@@ -41,7 +41,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build-dev
+        run: npm run build-beta
 
       - uses: jakejarvis/s3-sync-action@v0.5.1
         name: Sync files to DigitalOcean Spaces
