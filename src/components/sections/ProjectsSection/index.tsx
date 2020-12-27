@@ -5,6 +5,8 @@ import Img, {FluidObject} from "gatsby-image";
 import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
 import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
 import looseRGBIcon from "../../../assets/images/projects/icons/loose-rgb.svg";
+import contextThiefIcon from "../../../assets/images/projects/icons/context-thief.svg";
+import jestLocationMockIcon from "../../../assets/images/projects/icons/jest-location-mock.svg";
 import pluotIcon from "../../../assets/images/projects/icons/pluot.svg";
 import willMutateIcon from "../../../assets/images/projects/icons/will-mutate.svg";
 import Container from "../../utils/Container";
@@ -116,6 +118,44 @@ export default function ProjectsSection (): JSX.Element {
 						/>
 					)}
 					overlayColor="lilac"
+				/>
+				<Project
+					iconProject
+					title="Context Thief"
+					link="https://github.com/evelynhathaway/context-thief"
+					description={(
+						<>
+							Helper function to steal React context values for testing
+							{" "}
+							<Emoji symbol="⚛" label="React" /><Emoji symbol="🦹‍♀️" label="supervillain" />
+						</>
+					)}
+					image={(
+						<img
+							src={contextThiefIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="mint"
+				/>
+				<Project
+					iconProject
+					title="Jest Location Mock"
+					link="https://github.com/evelynhathaway/jest-location-mock"
+					description={(
+						<>
+							Jest hooks for JSDOM location mock
+							{" "}
+							<Emoji symbol="🗺" label="map" /><Emoji symbol="🧪" label="test tube" />
+						</>
+					)}
+					image={(
+						<img
+							src={jestLocationMockIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="blue"
 				/>
 				<Project
 					iconProject
