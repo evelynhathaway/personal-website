@@ -94,7 +94,7 @@
     "lint-staged": "^10.2.11",
     "sort-package-json": "^1.44.0",
     "typescript": "^3.9.7",
-    "worker-loader": "^3.0.0"
+    "worker-loader": "^3.0.7"
   },
   "engines": {
     "node": "^10.0.0"
