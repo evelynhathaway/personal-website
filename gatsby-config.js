@@ -2,7 +2,10 @@ const path = require("path");
 
 
 const buildMode = process.env.BUILD_ENV || "production";
-const siteUrl = buildMode === "production" ? "https://evelyn.dev" : "https://beta.evelyn.dev";
+const siteUrl = process.env.SITE_URL || (buildMode === "production" ? "https://evelyn.dev" : "https://beta.evelyn.dev");
+
+// eslint-disable-next-line no-console
+console.log(`Building for ${buildMode} at ${siteUrl}`);
 
 module.exports = {
 	siteMetadata: {
