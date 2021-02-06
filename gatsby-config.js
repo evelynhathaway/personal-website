@@ -22,15 +22,17 @@ module.exports = {
 			options: {
 				sassLoaderOptions: {
 					implementation: require("sass"),
-					data: `
+					additionalData: `
 						@use "sass:map";
 						@use "animations.scss";
 						@use "colors.scss";
 						@use "typography.scss";
 					`,
-					includePaths: [
-						"src/styles/defs/",
-					],
+					sassOptions: {
+						includePaths: [
+							"src/styles/defs/",
+						],
+					},
 				},
 			},
 		},
