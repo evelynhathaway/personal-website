@@ -38,6 +38,9 @@
 	&.blue {
 		background-color: map.get(colors.$blue, 400);
 	}
+	&.pink {
+		background-color: map.get(colors.$pink, 400);
+	}
 	&.lilac {
 		background-color: map.get(colors.$lilac, 400);
 	}

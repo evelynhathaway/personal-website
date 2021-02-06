@@ -9,7 +9,7 @@ import styles from "./styles.module.scss";
 
 export interface ProjectProps {
 	iconProject?: boolean;
-	overlayColor: "orange" | "blue" | "lilac" | "mint";
+	overlayColor: "orange" | "blue" | "pink" | "lilac" | "mint";
 	link: string;
 	title: React.ReactNode;
 	description: React.ReactNode;

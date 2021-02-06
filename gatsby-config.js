@@ -63,7 +63,7 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-robots-txt",
 			options: {
-				host: `${siteUrl}/sitemap.xml`,
+				host: siteUrl,
 				sitemap: `${siteUrl}/sitemap.xml`,
 				resolveEnv: () => buildMode,
 				env: {

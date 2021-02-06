@@ -5,6 +5,7 @@ export const card: string;
 export const iconProject: string;
 export const orange: string;
 export const blue: string;
+export const pink: string;
 export const lilac: string;
 export const mint: string;
 export const image: string;

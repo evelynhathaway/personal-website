@@ -15,7 +15,7 @@
   "author": "Evelyn Hathaway <npm@evelyn.dev> (https://evelyn.dev)",
   "scripts": {
     "build": "gatsby build",
-    "build-beta": "cross-env BUILD_ENV=beta npm run build",
+    "build-beta": "cross-env BUILD_ENV=development npm run build",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
     "lint": "eslint ./",

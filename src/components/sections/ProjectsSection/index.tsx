@@ -3,10 +3,11 @@ import Emoji from "a11y-react-emoji";
 import {graphql, useStaticQuery} from "gatsby";
 import Img, {FluidObject} from "gatsby-image";
 import bindDeepIcon from "../../../assets/images/projects/icons/bind-deep.svg";
-import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
-import looseRGBIcon from "../../../assets/images/projects/icons/loose-rgb.svg";
 import contextThiefIcon from "../../../assets/images/projects/icons/context-thief.svg";
+import eslintPluginIcon from "../../../assets/images/projects/icons/eslint-plugin-evelyn.svg";
 import jestLocationMockIcon from "../../../assets/images/projects/icons/jest-location-mock.svg";
+import looseRGBIcon from "../../../assets/images/projects/icons/loose-rgb.svg";
+import pixelSortIcon from "../../../assets/images/projects/icons/pixel-sort.svg";
 import pluotIcon from "../../../assets/images/projects/icons/pluot.svg";
 import willMutateIcon from "../../../assets/images/projects/icons/will-mutate.svg";
 import Container from "../../utils/Container";
@@ -83,6 +84,44 @@ export default function ProjectsSection (): JSX.Element {
 				/>
 				<Project
 					iconProject
+					title="Jest Location Mock"
+					link="https://github.com/evelynhathaway/jest-location-mock"
+					description={(
+						<>
+							Jest hooks for JSDOM location mock
+							{" "}
+							<Emoji symbol="🗺" label="map" /><Emoji symbol="🧪" label="test tube" />
+						</>
+					)}
+					image={(
+						<img
+							src={jestLocationMockIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="blue"
+				/>
+				<Project
+					iconProject
+					title="Pixel Sort"
+					link="https://github.com/evelynhathaway/pixel-sort"
+					description={(
+						<>
+							Liven your photos with a glitch effect
+							{" "}
+							<Emoji symbol="🖼️" label="photo" /><Emoji symbol="📏" label="ruler" />
+						</>
+					)}
+					image={(
+						<img
+							src={pixelSortIcon}
+							alt="Icon"
+						/>
+					)}
+					overlayColor="pink"
+				/>
+				<Project
+					iconProject
 					title="Bind Deep"
 					link="https://github.com/evelynhathaway/bind-deep"
 					description={(
@@ -99,25 +138,6 @@ export default function ProjectsSection (): JSX.Element {
 						/>
 					)}
 					overlayColor="blue"
-				/>
-				<Project
-					iconProject
-					title="Loose RGB"
-					link="https://github.com/evelynhathaway/loose-rgb"
-					description={(
-						<>
-							Normalizes RGB color data types to a certain format
-							{" "}
-							<Emoji symbol="🎨" label="palette" /><Emoji symbol="🃏" label="joker playing card" />
-						</>
-					)}
-					image={(
-						<img
-							src={looseRGBIcon}
-							alt="Icon"
-						/>
-					)}
-					overlayColor="lilac"
 				/>
 				<Project
 					iconProject
@@ -140,22 +160,22 @@ export default function ProjectsSection (): JSX.Element {
 				/>
 				<Project
 					iconProject
-					title="Jest Location Mock"
-					link="https://github.com/evelynhathaway/jest-location-mock"
+					title="Loose RGB"
+					link="https://github.com/evelynhathaway/loose-rgb"
 					description={(
 						<>
-							Jest hooks for JSDOM location mock
+							Normalizes RGB color data types to a certain format
 							{" "}
-							<Emoji symbol="🗺" label="map" /><Emoji symbol="🧪" label="test tube" />
+							<Emoji symbol="🎨" label="palette" /><Emoji symbol="🃏" label="joker playing card" />
 						</>
 					)}
 					image={(
 						<img
-							src={jestLocationMockIcon}
+							src={looseRGBIcon}
 							alt="Icon"
 						/>
 					)}
-					overlayColor="blue"
+					overlayColor="lilac"
 				/>
 				<Project
 					iconProject
