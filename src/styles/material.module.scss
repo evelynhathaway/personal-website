@@ -20,7 +20,7 @@
 	@include shadow-helper(map.get($colorMap, 800), 0.2);
 }
 
-// Color mixins for chaning material color
+// Color mixins for changing material color
 @mixin color($colorMap) {
 	color: map.get($colorMap, 900);
 	background-color: map.get($colorMap, 300);

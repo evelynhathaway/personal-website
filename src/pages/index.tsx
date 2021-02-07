@@ -1,4 +1,5 @@
 import React from "react";
+import AboutSection from "../components/sections/AboutSection";
 import ProjectsSection from "../components/sections/ProjectsSection";
 import TilesSection from "../components/sections/TilesSection";
 import Layout from "../components/utils/Layout";

@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 
 
 export {default as ButtonAnchor} from "./ButtonAnchor";
+export {default as ButtonLink} from "./ButtonLink";
 
 export interface ButtonProps {
 	outline?: boolean;

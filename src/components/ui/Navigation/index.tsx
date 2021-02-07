@@ -1,7 +1,8 @@
 import React from "react";
 import clsx from "clsx";
-import {ButtonAnchor} from "../Button";
+import {ButtonLink} from "../Button";
 import styles from "./styles.module.scss";
+import {useLocation} from "@reach/router";
 
 
 export interface NavigationProps {
@@ -9,19 +10,21 @@ export interface NavigationProps {
 }
 
 export default function Navigation ({center}: NavigationProps): JSX.Element {
+	const location = useLocation();
+
+	const isOnHome = location.pathname === "/";
+	const isOnAbout = location.pathname === "/about";
+
 	return (
-		// TODO: Use `<NavLink>`s, possible change the buttons to be composed with any component
 		<nav
-			aria-label="Main navigation" className={clsx(
+			aria-label="Main" className={clsx(
 				styles.Navigation,
 				center && styles.center,
 			)}
 		>
 			<span className={styles.navContainer}>
-				<ButtonAnchor outline color="white" href="/">Home</ButtonAnchor>
-				<ButtonAnchor outline color="white" href="/about">About</ButtonAnchor>
-				<ButtonAnchor outline color="white" href="/blog">Blog</ButtonAnchor>
-				<ButtonAnchor outline color="white" href="/work">Work</ButtonAnchor>
+				<ButtonLink outline={isOnHome} color="white" to="/">Home</ButtonLink>
+				<ButtonLink outline={isOnAbout} color="white" to="/about">About</ButtonLink>
 			</span>
 		</nav>
 	);

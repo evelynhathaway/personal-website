@@ -1,0 +1,38 @@
+@mixin xxsmall {
+	@media (max-width: 600px) {
+		@content;
+	}
+}
+
+.textBlock {
+	max-width: 80ch;
+	margin: auto;
+}
+
+.buttonGroup {
+	margin: 0 -8px;
+	> * {
+		margin: 0 8px;
+	}
+}
+
+.projectTickers {
+	display: flex;
+	flex-direction: row;
+	@include xxsmall {
+		display: block;
+	}
+	margin: -1rem;
+
+	figure {
+		margin: 1rem;
+	}
+
+	figcaption {
+		margin-bottom: 0.5em;
+	}
+
+	img {
+		margin: 0;
+	}
+}
