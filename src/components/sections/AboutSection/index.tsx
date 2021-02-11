@@ -20,15 +20,11 @@ export default function AboutSection (): JSX.Element {
 				<div className={styles.projectTickers}>
 					<figure>
 						<figcaption><strong>Current Project</strong></figcaption>
-						<a href="https://badgen.net/runkit/evelynhathaway/5efff0f4a433390013bee3fe?cache=300">
-							<img alt="Click to read dynamic image" src="https://badgen.net/runkit/evelynhathaway/5efff0f4a433390013bee3fe?cache=300" />
-						</a>
+						<object type="image/svg+xml" data="https://badgen.net/runkit/evelynhathaway/5efff0f4a433390013bee3fe?cache=300" />
 					</figure>
 					<figure>
 						<figcaption><strong>Last Personal Project</strong></figcaption>
-						<a href="https://badgen.net/runkit/evelynhathaway/5f0021fbf94b97001ad16899?cache=300">
-							<img alt="Click to read dynamic image" src="https://badgen.net/runkit/evelynhathaway/5f0021fbf94b97001ad16899?cache=300" />
-						</a>
+						<object type="image/svg+xml" data="https://badgen.net/runkit/evelynhathaway/5f0021fbf94b97001ad16899?cache=300" />
 					</figure>
 				</div>
 				<p><em>Projects update every ~5 min.</em></p>
