@@ -41,7 +41,7 @@ export default function TilesSection (): JSX.Element {
 					<p className={styles.preheader}>Hey there! <Emoji symbol="👋" label="Waving hand"/></p>
 					<h1>I&apos;m Evelyn Hathaway.</h1>
 					<p className={styles.tagline}>
-						I&apos;m a software engineer with a specializing in JavaScript and passionate about usability and inclusivity. (she/her)
+						I&apos;m a software engineer specializing in JavaScript and passionate about usability and inclusivity. (she/her)
 					</p>
 					<span className={styles.cssTriangle} />
 				</div>
